@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dolphin Planner - Intelligent Study Tracker</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        ocean: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .screenshot-shadow {
+            box-shadow: 0 25px 50px -12px rgba(2, 132, 199, 0.25);
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans text-gray-800 antialiased selection:bg-ocean-100 selection:text-ocean-900">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/80 backdrop-blur-md border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16 items-center">
+                <div class="flex items-center gap-2">
+                    <img src="assets/images/two-dolphins-svgrepo-com.svg" alt="Dolphin Planner Logo" class="h-8 w-8 text-ocean-600">
+                    <span class="font-bold text-xl text-gray-900 tracking-tight">Dolphin Planner</span>
+                </div>
+                <div class="hidden md:flex space-x-8">
+                    <a href="#features" class="text-gray-600 hover:text-ocean-600 font-medium transition">Features</a>
+                    <a href="#screenshots" class="text-gray-600 hover:text-ocean-600 font-medium transition">Screenshots</a>
+                    <a href="curriculum.html" class="text-gray-600 hover:text-ocean-600 font-medium transition">Curriculum</a>
+                    <a href="firebase-sync.html" class="text-gray-600 hover:text-ocean-600 font-medium transition">Firebase Sync</a>
+                    <a href="https://github.com/BhekumuziTshabalala/StudyTracker" target="_blank" class="text-gray-600 hover:text-ocean-600 font-medium transition">GitHub</a>
+                </div>
+                <a href="#download" class="hidden md:inline-flex items-center justify-center px-4 py-2 border border-transparent rounded-full shadow-sm text-sm font-medium text-white bg-ocean-600 hover:bg-ocean-700 transition">
+                    Download APK
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden bg-white pt-16 pb-32 lg:pt-32 lg:pb-40">
+        <div class="absolute inset-x-0 top-0 h-[40rem] bg-gradient-to-b from-ocean-50/50 to-transparent"></div>
+        <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col lg:flex-row items-center gap-12">
+            <div class="text-center lg:text-left lg:w-1/2">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 tracking-tight mb-6">
+                    Master your studies with <span class="text-ocean-600">Cognitive Interleaving</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-600 mb-8 max-w-2xl mx-auto lg:mx-0">
+                    An intelligent Android study planner designed for dual-module curriculums. Automate your syllabus scheduling, track your streak, and stay focused with our built-in Pomodoro timer.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                    <a href="#download" class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-medium rounded-full shadow-lg text-white bg-ocean-600 hover:bg-ocean-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ocean-500 transition">
+                        <i class="fa-brands fa-android mr-2 text-lg"></i> Download for Android
+                    </a>
+                    <a href="https://github.com/BhekumuziTshabalala/StudyTracker" target="_blank" class="inline-flex items-center justify-center px-8 py-3.5 border border-gray-300 text-base font-medium rounded-full shadow-sm text-gray-700 bg-white hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ocean-500 transition">
+                        <i class="fa-brands fa-github mr-2 text-lg"></i> View Source
+                    </a>
+                </div>
+            </div>
+            <div class="lg:w-1/2 flex justify-center lg:justify-end relative">
+                <div class="absolute inset-0 bg-ocean-100 rounded-full blur-3xl opacity-30 transform translate-x-10 translate-y-10"></div>
+                <img src="assets/images/01_Dashboard.png" alt="Dolphin Planner Dashboard" class="relative w-64 sm:w-80 lg:w-[320px] rounded-[2.5rem] border-[8px] border-gray-900 screenshot-shadow transform -rotate-2 hover:rotate-0 transition duration-500">
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section id="features" class="py-20 bg-gray-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-ocean-600 font-semibold tracking-wide uppercase text-sm mb-2">Features</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Everything you need to succeed
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Feature 1 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-xl bg-ocean-100 text-ocean-600 mb-5">
+                        <i class="fa-solid fa-layer-group text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Smart Interleaving</h3>
+                    <p class="text-gray-600 text-sm">
+                        Automatically alternates topics between modules to enhance retention and avoid cognitive fatigue.
+                    </p>
+                </div>
+
+                <!-- Feature 2 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-xl bg-ocean-100 text-ocean-600 mb-5">
+                        <i class="fa-solid fa-stopwatch text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Advanced Focus Timer</h3>
+                    <p class="text-gray-600 text-sm">
+                        Built-in Pomodoro timer that runs reliably in the background, logging your exact study minutes.
+                    </p>
+                </div>
+
+                <!-- Feature 3 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-xl bg-ocean-100 text-ocean-600 mb-5">
+                        <i class="fa-solid fa-chart-pie text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Progress Analytics</h3>
+                    <p class="text-gray-600 text-sm">
+                        High-resolution progress bars, completion percentages, streak tracking, and ECTS credits.
+                    </p>
+                </div>
+
+                <!-- Feature 4 -->
+                <div class="bg-white rounded-2xl p-6 shadow-sm border border-gray-100 hover:shadow-md transition">
+                    <div class="w-12 h-12 inline-flex items-center justify-center rounded-xl bg-ocean-100 text-ocean-600 mb-5">
+                        <i class="fa-solid fa-shield-halved text-xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">100% Offline & Private</h3>
+                    <p class="text-gray-600 text-sm">
+                        All study data and plans are stored locally on your device with zero cloud dependencies.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Screenshots Section -->
+    <section id="screenshots" class="py-20 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-16">
+                <h2 class="text-ocean-600 font-semibold tracking-wide uppercase text-sm mb-2">Gallery</h2>
+                <p class="mt-2 text-3xl leading-8 font-extrabold tracking-tight text-gray-900 sm:text-4xl">
+                    Beautifully designed in Material 3
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+                <div class="group relative">
+                    <img src="assets/images/02_Study.png" alt="Study View" class="w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300">
+                </div>
+                <div class="group relative md:mt-12">
+                    <img src="assets/images/03_Calendar.png" alt="Calendar View" class="w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300">
+                </div>
+                <div class="group relative">
+                    <img src="assets/images/04_Progress.png" alt="Progress View" class="w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300">
+                </div>
+                <div class="group relative md:mt-12">
+                    <img src="assets/images/05_Curriculum.png" alt="Curriculum View" class="w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="download" class="relative py-20 bg-ocean-900 overflow-hidden">
+        <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute -top-1/2 -right-1/4 w-full h-full bg-ocean-600 rounded-full opacity-20 blur-3xl transform scale-150"></div>
+        </div>
+        <div class="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+            <h2 class="text-3xl font-extrabold text-white sm:text-4xl mb-6">
+                Ready to ace your next module?
+            </h2>
+            <p class="text-xl text-ocean-100 mb-10 max-w-2xl mx-auto">
+                Join students managing their studies efficiently with Dolphin Planner. Free and open source forever.
+            </p>
+            <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                <a href="https://github.com/BhekumuziTshabalala/StudyTracker/releases" target="_blank" class="inline-flex items-center justify-center px-8 py-3.5 border border-transparent text-base font-medium rounded-full shadow-lg text-ocean-900 bg-white hover:bg-gray-50 transition">
+                    <i class="fa-brands fa-github mr-2 text-lg"></i> Get APK from GitHub Releases
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-12 pb-8">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="md:flex md:items-center md:justify-between">
+                <div class="flex justify-center md:justify-start mb-6 md:mb-0 items-center gap-2">
+                    <img src="assets/images/two-dolphins-svgrepo-com.svg" alt="Dolphin Planner Logo" class="h-6 w-6 text-ocean-600 opacity-80">
+                    <span class="text-gray-900 font-bold tracking-tight">Dolphin Planner</span>
+                </div>
+                <div class="flex justify-center space-x-6">
+                    <a href="https://github.com/BhekumuziTshabalala/StudyTracker" class="text-gray-400 hover:text-gray-500">
+                        <span class="sr-only">GitHub</span>
+                        <i class="fa-brands fa-github text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 md:mt-0 md:order-1">
+                <p class="text-center text-sm text-gray-500">
+                    &copy; 2026 Bhekumuzi Tshabalala. Released under the MIT License.
+                </p>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
