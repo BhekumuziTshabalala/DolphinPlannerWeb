@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
@@ -13,8 +13,13 @@
                         ocean: {
                             50: '#f0f9ff',
                             100: '#e0f2fe',
+                            200: '#bae6fd',
+                            300: '#7dd3fc',
+                            400: '#38bdf8',
                             500: '#0ea5e9',
                             600: '#0284c7',
+                            700: '#0369a1',
+                            800: '#075985',
                             900: '#0c4a6e',
                         }
                     }
@@ -24,6 +29,7 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+        /* Timeline vertical line — gradient from ocean-300 to ocean-600 */
         .timeline-container {
             position: relative;
             padding-left: 2rem;
@@ -35,7 +41,7 @@
             top: 0;
             bottom: 0;
             width: 2px;
-            background-color: #e2e8f0;
+            background: linear-gradient(to bottom, #7dd3fc, #0284c7);
         }
         .timeline-item {
             position: relative;
@@ -50,10 +56,51 @@
             border-radius: 50%;
             background-color: #0ea5e9;
             border: 3px solid #fff;
-            box-shadow: 0 0 0 1px #e2e8f0;
+            box-shadow: 0 0 0 1px #bae6fd;
+            transition: box-shadow 0.3s ease;
         }
+
+        /* Pulsing animation for visible timeline dots */
+        @keyframes pulse-dot {
+            0%, 100% { box-shadow: 0 0 0 1px #bae6fd, 0 0 0 4px rgba(14, 165, 233, 0); }
+            50% { box-shadow: 0 0 0 1px #bae6fd, 0 0 0 8px rgba(14, 165, 233, 0.25); }
+        }
+        .timeline-dot.is-visible {
+            animation: pulse-dot 2s ease-in-out infinite;
+        }
+
+        /* Timeline images */
         .timeline-img {
             cursor: zoom-in;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .timeline-img:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px -12px rgba(14, 165, 233, 0.2), 0 8px 24px -8px rgba(0, 0, 0, 0.1);
+            border-color: #bae6fd;
+        }
+
+        /* Phase badge gradient */
+        .phase-badge {
+            background: linear-gradient(135deg, #0ea5e9, #0369a1);
+        }
+
+        /* Scroll-reveal: items start invisible and translate up */
+        .scroll-reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .scroll-reveal.is-revealed {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Scroll progress bar */
+        #scroll-progress {
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: transform 0.1s linear;
         }
     </style>
 </head>
@@ -69,13 +116,19 @@
                         <span class="font-bold text-xl text-gray-900 tracking-tight">Dolphin Planner</span>
                     </a>
                 </div>
-                <div class="flex space-x-4">
+                <div class="flex space-x-5">
                     <a href="index.html" class="text-gray-600 hover:text-ocean-600 font-medium transition">Home</a>
                     <a href="curriculum.html" class="text-gray-600 hover:text-ocean-600 font-medium transition">Curriculum</a>
+                    <a href="firebase-sync.html" class="text-ocean-600 font-semibold border-b-2 border-ocean-500 pb-0.5 transition">Firebase Sync</a>
                 </div>
             </div>
         </div>
     </nav>
+
+    <!-- Scroll Progress Bar -->
+    <div class="sticky top-16 z-40 h-1 bg-gray-100">
+        <div id="scroll-progress" class="h-full bg-gradient-to-r from-ocean-400 via-ocean-500 to-ocean-700 w-full"></div>
+    </div>
 
     <!-- Content -->
     <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
@@ -90,144 +143,176 @@
 
             <!-- Phase 1 -->
             <div class="mb-12">
-                <div class="flex items-center gap-3 mb-8 bg-ocean-50 p-4 rounded-xl border border-ocean-100">
-                    <div class="w-10 h-10 rounded-full bg-ocean-600 text-white font-bold flex items-center justify-center text-xl shadow-md">1</div>
+                <div class="scroll-reveal flex items-center gap-3 mb-8 bg-ocean-50 p-4 rounded-xl border border-ocean-100">
+                    <div class="w-10 h-10 rounded-full phase-badge text-white font-bold flex items-center justify-center text-xl shadow-md">1</div>
                     <h2 class="text-2xl font-bold text-ocean-900">Create a Firebase Project</h2>
                 </div>
                 
                 <div class="timeline-container">
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Navigate to the Console</h3>
                         <p class="text-gray-600 mb-4">Go to the official <a href="https://console.firebase.google.com/" target="_blank" class="text-ocean-600 hover:underline font-semibold">Firebase Console</a> website.</p>
-                        <img src="assets/firebase_link/1.Go_to_console.png" alt="Navigate to the Firebase Console" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/1.Go_to_console.png" alt="Navigate to the Firebase Console" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Get Started</h3>
                         <p class="text-gray-600 mb-4">Click on the "Get started" or "Create a project" button to begin the setup wizard.</p>
-                        <img src="assets/firebase_link/2.Get_started.png" alt="Click on Get started" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/2.Get_started.png" alt="Click on Get started" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Name Your Project</h3>
                         <p class="text-gray-600 mb-4">Enter a descriptive name for your database, such as "DolphinPlannerSync", and accept the terms.</p>
-                        <img src="assets/firebase_link/3.Add_name.png" alt="Enter a project name" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/3.Add_name.png" alt="Enter a project name" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Finish Creation</h3>
                         <p class="text-gray-600 mb-4">Wait a few moments for Firebase to provision your backend resources, then click "Continue".</p>
-                        <img src="assets/firebase_link/4.Create_project.png" alt="Wait for project creation to finish" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/4.Create_project.png" alt="Wait for project creation to finish" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
                 </div>
             </div>
 
             <!-- Phase 2 -->
             <div class="mb-12">
-                <div class="flex items-center gap-3 mb-8 bg-ocean-50 p-4 rounded-xl border border-ocean-100">
-                    <div class="w-10 h-10 rounded-full bg-ocean-600 text-white font-bold flex items-center justify-center text-xl shadow-md">2</div>
+                <div class="scroll-reveal flex items-center gap-3 mb-8 bg-ocean-50 p-4 rounded-xl border border-ocean-100">
+                    <div class="w-10 h-10 rounded-full phase-badge text-white font-bold flex items-center justify-center text-xl shadow-md">2</div>
                     <h2 class="text-2xl font-bold text-ocean-900">Enable Firestore Database</h2>
                 </div>
                 
                 <div class="timeline-container">
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Locate Firestore</h3>
                         <p class="text-gray-600 mb-4">In the left-hand menu of your new project dashboard, click on "Firestore Database" under the Build category.</p>
-                        <img src="assets/firebase_link/5.Firestore.png" alt="Locate Firestore Database in the menu" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/5.Firestore.png" alt="Locate Firestore Database in the menu" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Create Database</h3>
                         <p class="text-gray-600 mb-4">Click the prominent "Create database" button to start the database setup wizard.</p>
-                        <img src="assets/firebase_link/6.Create_Database.png" alt="Click Create Database" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/6.Create_Database.png" alt="Click Create Database" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Configure Rules</h3>
                         <p class="text-gray-600 mb-4">Choose "Start in test mode" for immediate read/write access (you can secure these rules later), then click Next.</p>
-                        <img src="assets/firebase_link/7.Click_Next.png" alt="Configure security rules" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/7.Click_Next.png" alt="Configure security rules" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Select Location</h3>
                         <p class="text-gray-600 mb-4">Choose the cloud server region closest to you for the best sync performance.</p>
-                        <img src="assets/firebase_link/8.Set_Location.png" alt="Select your database location" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/8.Set_Location.png" alt="Select your database location" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Deploy Database</h3>
                         <p class="text-gray-600 mb-4">Click "Create" or "Enable" to finalize the database provisioning.</p>
-                        <img src="assets/firebase_link/9.create.png" alt="Deploy the database" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/9.create.png" alt="Deploy the database" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
                 </div>
             </div>
 
             <!-- Phase 3 -->
             <div class="mb-12">
-                <div class="flex items-center gap-3 mb-8 bg-ocean-50 p-4 rounded-xl border border-ocean-100">
-                    <div class="w-10 h-10 rounded-full bg-ocean-600 text-white font-bold flex items-center justify-center text-xl shadow-md">3</div>
-                    <h2 class="text-2xl font-bold text-ocean-900">Add App & Extract Credentials</h2>
+                <div class="scroll-reveal flex items-center gap-3 mb-8 bg-ocean-50 p-4 rounded-xl border border-ocean-100">
+                    <div class="w-10 h-10 rounded-full phase-badge text-white font-bold flex items-center justify-center text-xl shadow-md">3</div>
+                    <h2 class="text-2xl font-bold text-ocean-900">Add App &amp; Extract Credentials</h2>
                 </div>
                 
                 <div class="timeline-container">
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Return to Overview</h3>
                         <p class="text-gray-600 mb-4">Click on "Project Overview" (the home icon) in the top left corner of the menu.</p>
-                        <img src="assets/firebase_link/10.Project_Overview.png" alt="Return to Project Overview" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/10.Project_Overview.png" alt="Return to Project Overview" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Add an App</h3>
                         <p class="text-gray-600 mb-4">Look for the "Get started by adding Firebase to your app" section.</p>
-                        <img src="assets/firebase_link/11.Add_app.png" alt="Look for Add app section" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/11.Add_app.png" alt="Look for Add app section" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Select the Web Platform</h3>
                         <p class="text-gray-600 mb-4">Because the Android app uses dynamic API keys, you must click the <strong>Web (&lt;/&gt;)</strong> icon.</p>
-                        <img src="assets/firebase_link/12.Click_Web.png" alt="Click the Web icon" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/12.Click_Web.png" alt="Click the Web icon" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Register the App</h3>
                         <p class="text-gray-600 mb-4">Give your app registration a nickname and click "Register app".</p>
-                        <img src="assets/firebase_link/13.Register_app.png" alt="Register the web app" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/13.Register_app.png" alt="Register the web app" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
 
-                    <div class="timeline-item">
+                    <div class="timeline-item scroll-reveal">
                         <div class="timeline-dot"></div>
                         <h3 class="text-lg font-bold text-gray-900 mb-2">Copy Your Keys</h3>
                         <p class="text-gray-600 mb-4">Firebase will present a configuration block. These are the credentials you need to paste into the Dolphin Planner Android app!</p>
-                        <img src="assets/firebase_link/14._Data.png" alt="Copy the Firebase keys" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                        <img src="assets/firebase_link/14._Data.png" alt="Copy the Firebase keys" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200">
                     </div>
                 </div>
             </div>
 
             <!-- Phase 4 -->
             <div class="mb-4 mt-8">
-                <div class="flex items-center gap-3 mb-6 bg-ocean-50 p-4 rounded-xl border border-ocean-100">
-                    <div class="w-10 h-10 rounded-full bg-ocean-600 text-white font-bold flex items-center justify-center text-xl shadow-md"><i class="fa-solid fa-mobile-screen"></i></div>
+                <div class="scroll-reveal flex items-center gap-3 mb-6 bg-ocean-50 p-4 rounded-xl border border-ocean-100">
+                    <div class="w-10 h-10 rounded-full phase-badge text-white font-bold flex items-center justify-center text-xl shadow-md"><i class="fa-solid fa-mobile-screen"></i></div>
                     <h2 class="text-2xl font-bold text-ocean-900">Final Step: Link the App!</h2>
                 </div>
-                <div class="pl-4 border-l-4 border-ocean-200 ml-4 py-2">
+                <div class="scroll-reveal pl-4 border-l-4 border-ocean-200 ml-4 py-2">
                     <p class="text-gray-600 mb-4 text-lg">Open Dolphin Planner on your phone, go to <strong>Settings > Cloud Sync (Firebase)</strong>, toggle it on, and paste in the <strong>Project ID</strong>, <strong>App ID</strong>, and <strong>Web API Key</strong> you retrieved from the last image.</p>
                     <p class="text-gray-900 font-bold bg-green-50 border border-green-200 p-4 rounded-lg inline-flex items-center gap-3"><i class="fa-solid fa-check-circle text-green-500 text-xl"></i> Synchronization will begin immediately!</p>
                 </div>
             </div>
             
+        </div>
+
+        <!-- Why BYOF Section -->
+        <div class="mt-16 scroll-reveal">
+            <h2 class="text-2xl font-extrabold text-gray-900 text-center mb-3">Why "Bring Your Own Firebase"?</h2>
+            <p class="text-gray-500 text-center mb-10 max-w-2xl mx-auto">The BYOF architecture puts you in complete control of your data and infrastructure.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <!-- Privacy Card -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 hover:shadow-lg hover:border-ocean-200 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-ocean-50 text-ocean-600 flex items-center justify-center mb-4 group-hover:bg-ocean-100 transition-colors">
+                        <i class="fa-solid fa-shield-halved text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Privacy First</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Students own their data in their personal Google Cloud environment. No third party ever touches your study records or personal information.</p>
+                </div>
+                <!-- Open Source Card -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 hover:shadow-lg hover:border-ocean-200 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-ocean-50 text-ocean-600 flex items-center justify-center mb-4 group-hover:bg-ocean-100 transition-colors">
+                        <i class="fa-solid fa-code-branch text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Open Source Friendly</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">No leaked credentials or maxed-out quotas. Because each student uses their own project, the open-source repo stays clean and safe.</p>
+                </div>
+                <!-- Offline-First Card -->
+                <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-6 hover:shadow-lg hover:border-ocean-200 transition-all duration-300 group">
+                    <div class="w-12 h-12 rounded-xl bg-ocean-50 text-ocean-600 flex items-center justify-center mb-4 group-hover:bg-ocean-100 transition-colors">
+                        <i class="fa-solid fa-database text-2xl"></i>
+                    </div>
+                    <h3 class="text-lg font-bold text-gray-900 mb-2">Offline-First</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed">Room SQLite is the single source of truth. Firebase syncs opportunistically when connected — the app works perfectly without internet.</p>
+                </div>
+            </div>
         </div>
     </main>
 
@@ -239,17 +324,52 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-8 mt-auto">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <p class="text-sm text-gray-500">
-                &copy; 2026 Dolphin Planner. Released under the MIT License.
-            </p>
+    <footer class="bg-white border-t border-gray-200 pt-12 pb-8 mt-auto">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <!-- Brand -->
+                <div>
+                    <div class="flex items-center gap-2 mb-3">
+                        <img src="assets/images/two-dolphins-svgrepo-com.svg" alt="Dolphin Planner Logo" class="h-6 w-6 opacity-80">
+                        <span class="text-gray-900 font-bold tracking-tight">Dolphin Planner</span>
+                    </div>
+                    <p class="text-sm text-gray-500 leading-relaxed">A free, open-source study planner built for university students. Plan smarter, study better.</p>
+                </div>
+                <!-- Quick Links -->
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">Quick Links</h4>
+                    <ul class="space-y-2">
+                        <li><a href="index.html" class="text-sm text-gray-500 hover:text-ocean-600 transition">Home</a></li>
+                        <li><a href="curriculum.html" class="text-sm text-gray-500 hover:text-ocean-600 transition">Curriculum</a></li>
+                        <li><a href="firebase-sync.html" class="text-sm text-gray-500 hover:text-ocean-600 transition">Firebase Sync</a></li>
+                    </ul>
+                </div>
+                <!-- Resources -->
+                <div>
+                    <h4 class="text-sm font-semibold text-gray-900 uppercase tracking-wider mb-3">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="https://github.com/BhekumuziTshabalala/StudyTracker" target="_blank" class="text-sm text-gray-500 hover:text-ocean-600 transition"><i class="fa-brands fa-github mr-1"></i> GitHub Repository</a></li>
+                        <li><a href="https://github.com/BhekumuziTshabalala/StudyTracker/releases" target="_blank" class="text-sm text-gray-500 hover:text-ocean-600 transition"><i class="fa-solid fa-download mr-1"></i> Download APK</a></li>
+                        <li><a href="https://console.firebase.google.com/" target="_blank" class="text-sm text-gray-500 hover:text-ocean-600 transition"><i class="fa-solid fa-fire mr-1"></i> Firebase Console</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-gray-100 pt-6 flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-sm text-gray-500">
+                    &copy; 2026 Bhekumuzi Tshabalala. Released under the MIT License.
+                </p>
+                <a href="https://github.com/BhekumuziTshabalala/StudyTracker" class="text-gray-400 hover:text-gray-500 transition">
+                    <span class="sr-only">GitHub</span>
+                    <i class="fa-brands fa-github text-xl"></i>
+                </a>
+            </div>
         </div>
     </footer>
 
-    <!-- JavaScript for Lightbox -->
+    <!-- JavaScript for Lightbox, Scroll Reveal, Progress Bar, Pulsing Dots -->
     <script>
         document.addEventListener('DOMContentLoaded', () => {
+            // === Lightbox ===
             const lightbox = document.getElementById('lightbox');
             const lightboxImg = document.getElementById('lightboxImg');
             const lightboxCaption = document.getElementById('lightboxCaption');
@@ -287,6 +407,49 @@
                     closeLightboxHandler();
                 }
             });
+
+            // === Scroll Progress Bar ===
+            const progressBar = document.getElementById('scroll-progress');
+            const updateProgress = () => {
+                const scrollTop = window.scrollY;
+                const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+                const progress = docHeight > 0 ? scrollTop / docHeight : 0;
+                progressBar.style.transform = `scaleX(${Math.min(progress, 1)})`;
+            };
+            window.addEventListener('scroll', updateProgress, { passive: true });
+            updateProgress();
+
+            // === Scroll Reveal & Pulsing Dots ===
+            const revealElements = document.querySelectorAll('.scroll-reveal');
+            const timelineDots = document.querySelectorAll('.timeline-dot');
+
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-revealed');
+                    }
+                });
+            }, {
+                threshold: 0.15,
+                rootMargin: '0px 0px -40px 0px'
+            });
+
+            revealElements.forEach(el => observer.observe(el));
+
+            // Pulsing dots observer — only pulses while in view
+            const dotObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    } else {
+                        entry.target.classList.remove('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.5
+            });
+
+            timelineDots.forEach(dot => dotObserver.observe(dot));
         });
     </script>
 </body>
