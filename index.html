@@ -75,7 +75,7 @@
             </div>
             <div class="lg:w-1/2 flex justify-center lg:justify-end relative">
                 <div class="absolute inset-0 bg-ocean-100 rounded-full blur-3xl opacity-30 transform translate-x-10 translate-y-10"></div>
-                <img src="assets/images/01_Dashboard.png" alt="Dolphin Planner Dashboard" class="relative w-64 sm:w-80 lg:w-[320px] rounded-[2.5rem] border-[8px] border-gray-900 screenshot-shadow transform -rotate-2 hover:rotate-0 transition duration-500">
+                <img src="assets/app_screenshots/Dashboard.jpg" alt="Dolphin Planner Dashboard" class="relative w-64 sm:w-80 lg:w-[320px] rounded-[2.5rem] border-[8px] border-gray-900 screenshot-shadow transform -rotate-2 hover:rotate-0 transition duration-500">
             </div>
         </div>
     </section>
@@ -148,18 +148,48 @@
                 </p>
             </div>
             
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-6 lg:gap-8">
+            <div class="grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+                <!-- Dashboard -->
                 <div class="group relative">
-                    <img src="assets/images/02_Study.png" alt="Study View" class="w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300">
+                    <img src="assets/app_screenshots/Dashboard.jpg" alt="Dashboard" class="screenshot-img w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300 cursor-zoom-in">
+                    <div class="mt-4 text-center">
+                        <h3 class="font-bold text-gray-900">Dashboard</h3>
+                    </div>
                 </div>
-                <div class="group relative md:mt-12">
-                    <img src="assets/images/03_Calendar.png" alt="Calendar View" class="w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300">
+                <!-- Eisenhower Matrix -->
+                <div class="group relative md:mt-8 lg:mt-12">
+                    <img src="assets/app_screenshots/Eisenhower_Matrix.jpg" alt="Eisenhower Matrix" class="screenshot-img w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300 cursor-zoom-in">
+                    <div class="mt-4 text-center">
+                        <h3 class="font-bold text-gray-900">Eisenhower Matrix</h3>
+                    </div>
                 </div>
+                <!-- Pomodoro -->
+                <div class="group relative lg:mt-24">
+                    <img src="assets/app_screenshots/Pomodoro.jpg" alt="Pomodoro" class="screenshot-img w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300 cursor-zoom-in">
+                    <div class="mt-4 text-center">
+                        <h3 class="font-bold text-gray-900">Pomodoro</h3>
+                    </div>
+                </div>
+                <!-- Calendar -->
                 <div class="group relative">
-                    <img src="assets/images/04_Progress.png" alt="Progress View" class="w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300">
+                    <img src="assets/app_screenshots/Calendar.jpg" alt="Calendar" class="screenshot-img w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300 cursor-zoom-in">
+                    <div class="mt-4 text-center">
+                        <h3 class="font-bold text-gray-900">Calendar</h3>
+                    </div>
                 </div>
-                <div class="group relative md:mt-12">
-                    <img src="assets/images/05_Curriculum.png" alt="Curriculum View" class="w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300">
+                <!-- Curriculum Management -->
+                <div class="group relative md:mt-8 lg:mt-12">
+                    <img src="assets/app_screenshots/Curriculum_Management.jpg" alt="Curriculum Management" class="screenshot-img w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300 cursor-zoom-in">
+                    <div class="mt-4 text-center">
+                        <h3 class="font-bold text-gray-900">Curriculum Management</h3>
+                    </div>
+                </div>
+                <!-- Curriculum Import -->
+                <div class="group relative lg:mt-24">
+                    <img src="assets/app_screenshots/Curriculum_Import.jpg" alt="Curriculum Import" class="screenshot-img w-full rounded-[2rem] border-[6px] border-gray-100 shadow-lg group-hover:border-ocean-100 transition duration-300 cursor-zoom-in">
+                    <div class="mt-4 text-center">
+                        <h3 class="font-bold text-gray-900">Curriculum Import</h3>
+                    </div>
                 </div>
             </div>
         </div>
@@ -185,6 +215,13 @@
         </div>
     </section>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden flex-col items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <button id="closeLightbox" class="absolute top-6 right-6 text-white hover:text-gray-300 text-4xl focus:outline-none">&times;</button>
+        <img id="lightboxImg" src="" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl border-2 border-gray-700">
+        <p id="lightboxCaption" class="text-white mt-6 text-xl font-medium tracking-wide"></p>
+    </div>
+
     <!-- Footer -->
     <footer class="bg-white border-t border-gray-200 pt-12 pb-8">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -208,5 +245,44 @@
         </div>
     </footer>
 
+    <!-- JavaScript for Lightbox -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const closeBtn = document.getElementById('closeLightbox');
+
+            document.querySelectorAll('.screenshot-img').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxCaption.textContent = img.alt;
+                    lightbox.classList.remove('hidden');
+                    setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                });
+            });
+
+            const closeLightboxHandler = () => {
+                lightbox.classList.add('opacity-0');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+                setTimeout(() => lightbox.classList.add('hidden'), 300);
+            };
+
+            closeBtn.addEventListener('click', closeLightboxHandler);
+            
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightboxHandler();
+                }
+            });
+
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                    closeLightboxHandler();
+                }
+            });
+        });
+    </script>
 </body>
 </html>

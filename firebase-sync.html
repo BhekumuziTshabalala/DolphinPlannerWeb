@@ -23,6 +23,39 @@
         }
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .timeline-container {
+            position: relative;
+            padding-left: 2rem;
+        }
+        .timeline-container::before {
+            content: '';
+            position: absolute;
+            left: 0.45rem;
+            top: 0;
+            bottom: 0;
+            width: 2px;
+            background-color: #e2e8f0;
+        }
+        .timeline-item {
+            position: relative;
+            margin-bottom: 3rem;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -2.35rem;
+            top: 0.25rem;
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            background-color: #0ea5e9;
+            border: 3px solid #fff;
+            box-shadow: 0 0 0 1px #e2e8f0;
+        }
+        .timeline-img {
+            cursor: zoom-in;
+        }
+    </style>
 </head>
 <body class="bg-gray-50 font-sans text-gray-800 antialiased min-h-screen flex flex-col">
 
@@ -46,80 +79,167 @@
 
     <!-- Content -->
     <main class="flex-grow max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8">
+        <div class="bg-white rounded-2xl shadow-sm border border-gray-200 p-8 md:p-12">
             <div class="inline-flex items-center justify-center rounded-xl bg-orange-100 text-orange-600 mb-6 p-3">
                 <i class="fa-solid fa-cloud-arrow-up text-3xl"></i>
             </div>
-            <h1 class="text-3xl font-extrabold text-gray-900 mb-4">Set Up Firebase Cloud Sync</h1>
-            <p class="text-lg text-gray-600 mb-8">
-                While Dolphin Planner is designed to be 100% offline and private by default, you can configure it to sync your study progress across multiple devices using your own personal Firebase database. Follow the guide below to connect the app to Firebase.
+            <h1 class="text-3xl font-extrabold text-gray-900 mb-4">Set Up Firebase Cloud Sync (BYOF)</h1>
+            <p class="text-lg text-gray-600 mb-10">
+                Dolphin Planner uses a unique <strong>"Bring Your Own Firebase" (BYOF)</strong> architecture. Instead of hardcoding credentials, the app allows you to link your own personal Firebase project to sync study data across your devices. Follow the timeline below to get started. Click on any image to enlarge it.
             </p>
 
-            <div class="space-y-8">
-                <!-- Step 1 -->
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-ocean-600 text-white font-bold">1</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Create a Firebase Project</h3>
-                        <p class="text-gray-600 mb-2">Go to the <a href="https://console.firebase.google.com/" target="_blank" class="text-ocean-600 hover:underline">Firebase Console</a> and click <strong>Add Project</strong>. Give it a name (e.g., "DolphinPlannerSync") and follow the setup wizard.</p>
+            <!-- Phase 1 -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-8 bg-ocean-50 p-4 rounded-xl border border-ocean-100">
+                    <div class="w-10 h-10 rounded-full bg-ocean-600 text-white font-bold flex items-center justify-center text-xl shadow-md">1</div>
+                    <h2 class="text-2xl font-bold text-ocean-900">Create a Firebase Project</h2>
+                </div>
+                
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Navigate to the Console</h3>
+                        <p class="text-gray-600 mb-4">Go to the official <a href="https://console.firebase.google.com/" target="_blank" class="text-ocean-600 hover:underline font-semibold">Firebase Console</a> website.</p>
+                        <img src="assets/firebase_link/1.Go_to_console.png" alt="Navigate to the Firebase Console" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Get Started</h3>
+                        <p class="text-gray-600 mb-4">Click on the "Get started" or "Create a project" button to begin the setup wizard.</p>
+                        <img src="assets/firebase_link/2.Get_started.png" alt="Click on Get started" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Name Your Project</h3>
+                        <p class="text-gray-600 mb-4">Enter a descriptive name for your database, such as "DolphinPlannerSync", and accept the terms.</p>
+                        <img src="assets/firebase_link/3.Add_name.png" alt="Enter a project name" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Finish Creation</h3>
+                        <p class="text-gray-600 mb-4">Wait a few moments for Firebase to provision your backend resources, then click "Continue".</p>
+                        <img src="assets/firebase_link/4.Create_project.png" alt="Wait for project creation to finish" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
                     </div>
                 </div>
+            </div>
 
-                <!-- Step 2 -->
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-ocean-600 text-white font-bold">2</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Register the Android App</h3>
-                        <p class="text-gray-600 mb-2">In your Firebase project overview, click the Android icon to add an app. Enter the package name exactly as it appears in the source code:</p>
-                        <code class="block bg-gray-100 text-gray-800 px-4 py-2 rounded-md font-mono text-sm mt-2">com.iu.studytracker</code>
+            <!-- Phase 2 -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-8 bg-ocean-50 p-4 rounded-xl border border-ocean-100">
+                    <div class="w-10 h-10 rounded-full bg-ocean-600 text-white font-bold flex items-center justify-center text-xl shadow-md">2</div>
+                    <h2 class="text-2xl font-bold text-ocean-900">Enable Firestore Database</h2>
+                </div>
+                
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Locate Firestore</h3>
+                        <p class="text-gray-600 mb-4">In the left-hand menu of your new project dashboard, click on "Firestore Database" under the Build category.</p>
+                        <img src="assets/firebase_link/5.Firestore.png" alt="Locate Firestore Database in the menu" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Create Database</h3>
+                        <p class="text-gray-600 mb-4">Click the prominent "Create database" button to start the database setup wizard.</p>
+                        <img src="assets/firebase_link/6.Create_Database.png" alt="Click Create Database" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Configure Rules</h3>
+                        <p class="text-gray-600 mb-4">Choose "Start in test mode" for immediate read/write access (you can secure these rules later), then click Next.</p>
+                        <img src="assets/firebase_link/7.Click_Next.png" alt="Configure security rules" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Select Location</h3>
+                        <p class="text-gray-600 mb-4">Choose the cloud server region closest to you for the best sync performance.</p>
+                        <img src="assets/firebase_link/8.Set_Location.png" alt="Select your database location" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Deploy Database</h3>
+                        <p class="text-gray-600 mb-4">Click "Create" or "Enable" to finalize the database provisioning.</p>
+                        <img src="assets/firebase_link/9.create.png" alt="Deploy the database" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
                     </div>
                 </div>
+            </div>
 
-                <!-- Step 3 -->
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-ocean-600 text-white font-bold">3</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Download google-services.json</h3>
-                        <p class="text-gray-600 mb-2">After registering the app, download the configuration file <code>google-services.json</code>. Move this file into the <code>app/</code> directory of your local Dolphin Planner source code folder.</p>
+            <!-- Phase 3 -->
+            <div class="mb-12">
+                <div class="flex items-center gap-3 mb-8 bg-ocean-50 p-4 rounded-xl border border-ocean-100">
+                    <div class="w-10 h-10 rounded-full bg-ocean-600 text-white font-bold flex items-center justify-center text-xl shadow-md">3</div>
+                    <h2 class="text-2xl font-bold text-ocean-900">Add App & Extract Credentials</h2>
+                </div>
+                
+                <div class="timeline-container">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Return to Overview</h3>
+                        <p class="text-gray-600 mb-4">Click on "Project Overview" (the home icon) in the top left corner of the menu.</p>
+                        <img src="assets/firebase_link/10.Project_Overview.png" alt="Return to Project Overview" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Add an App</h3>
+                        <p class="text-gray-600 mb-4">Look for the "Get started by adding Firebase to your app" section.</p>
+                        <img src="assets/firebase_link/11.Add_app.png" alt="Look for Add app section" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Select the Web Platform</h3>
+                        <p class="text-gray-600 mb-4">Because the Android app uses dynamic API keys, you must click the <strong>Web (&lt;/&gt;)</strong> icon.</p>
+                        <img src="assets/firebase_link/12.Click_Web.png" alt="Click the Web icon" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Register the App</h3>
+                        <p class="text-gray-600 mb-4">Give your app registration a nickname and click "Register app".</p>
+                        <img src="assets/firebase_link/13.Register_app.png" alt="Register the web app" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <h3 class="text-lg font-bold text-gray-900 mb-2">Copy Your Keys</h3>
+                        <p class="text-gray-600 mb-4">Firebase will present a configuration block. These are the credentials you need to paste into the Dolphin Planner Android app!</p>
+                        <img src="assets/firebase_link/14._Data.png" alt="Copy the Firebase keys" class="timeline-img w-full max-w-xl rounded-xl shadow-md border border-gray-200 hover:opacity-90 transition">
                     </div>
                 </div>
+            </div>
 
-                <!-- Step 4 -->
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-ocean-600 text-white font-bold">4</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Enable Cloud Firestore</h3>
-                        <p class="text-gray-600 mb-2">In the Firebase Console menu, navigate to <strong>Firestore Database</strong> and click <strong>Create database</strong>. Start in <strong>Test mode</strong> for immediate access, or set up security rules to restrict read/write access to your authenticated user.</p>
-                    </div>
+            <!-- Phase 4 -->
+            <div class="mb-4 mt-8">
+                <div class="flex items-center gap-3 mb-6 bg-ocean-50 p-4 rounded-xl border border-ocean-100">
+                    <div class="w-10 h-10 rounded-full bg-ocean-600 text-white font-bold flex items-center justify-center text-xl shadow-md"><i class="fa-solid fa-mobile-screen"></i></div>
+                    <h2 class="text-2xl font-bold text-ocean-900">Final Step: Link the App!</h2>
                 </div>
-
-                <!-- Step 5 -->
-                <div class="flex gap-4">
-                    <div class="flex-shrink-0 flex items-center justify-center w-8 h-8 rounded-full bg-ocean-600 text-white font-bold">5</div>
-                    <div>
-                        <h3 class="text-xl font-bold text-gray-900 mb-2">Rebuild the Application</h3>
-                        <p class="text-gray-600 mb-2">Open the project in Android Studio and run a gradle sync. Build and install the APK to your devices. The app will now automatically detect the Firebase configuration and begin syncing your study plans and progress!</p>
-                    </div>
+                <div class="pl-4 border-l-4 border-ocean-200 ml-4 py-2">
+                    <p class="text-gray-600 mb-4 text-lg">Open Dolphin Planner on your phone, go to <strong>Settings > Cloud Sync (Firebase)</strong>, toggle it on, and paste in the <strong>Project ID</strong>, <strong>App ID</strong>, and <strong>Web API Key</strong> you retrieved from the last image.</p>
+                    <p class="text-gray-900 font-bold bg-green-50 border border-green-200 p-4 rounded-lg inline-flex items-center gap-3"><i class="fa-solid fa-check-circle text-green-500 text-xl"></i> Synchronization will begin immediately!</p>
                 </div>
             </div>
             
-            <div class="mt-10 bg-yellow-50 border-l-4 border-yellow-400 p-4 rounded-r-md">
-                <div class="flex">
-                    <div class="flex-shrink-0">
-                        <i class="fa-solid fa-triangle-exclamation text-yellow-400"></i>
-                    </div>
-                    <div class="ml-3">
-                        <p class="text-sm text-yellow-700">
-                            <strong>Note:</strong> Enabling Firebase sync overrides the default "offline-only" SQLite implementation. Ensure your Firebase Firestore rules are secure to keep your study data private.
-                        </p>
-                    </div>
-                </div>
-            </div>
         </div>
     </main>
 
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="fixed inset-0 z-[100] bg-black/90 hidden flex-col items-center justify-center p-4 opacity-0 transition-opacity duration-300">
+        <button id="closeLightbox" class="absolute top-6 right-6 text-white hover:text-gray-300 text-4xl focus:outline-none">&times;</button>
+        <img id="lightboxImg" src="" class="max-w-full max-h-[85vh] object-contain rounded-lg shadow-2xl border-2 border-gray-700">
+        <p id="lightboxCaption" class="text-white mt-6 text-xl font-medium tracking-wide"></p>
+    </div>
+
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-8">
+    <footer class="bg-white border-t border-gray-200 py-8 mt-auto">
         <div class="max-w-7xl mx-auto px-4 text-center">
             <p class="text-sm text-gray-500">
                 &copy; 2026 Dolphin Planner. Released under the MIT License.
@@ -127,5 +247,47 @@
         </div>
     </footer>
 
+    <!-- JavaScript for Lightbox -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightboxImg');
+            const lightboxCaption = document.getElementById('lightboxCaption');
+            const closeBtn = document.getElementById('closeLightbox');
+
+            document.querySelectorAll('.timeline-img').forEach(img => {
+                img.addEventListener('click', () => {
+                    lightboxImg.src = img.src;
+                    lightboxCaption.textContent = img.alt;
+                    lightbox.classList.remove('hidden');
+                    // Tiny delay to ensure display:block applies before fading in
+                    setTimeout(() => lightbox.classList.remove('opacity-0'), 10);
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                });
+            });
+
+            const closeLightboxHandler = () => {
+                lightbox.classList.add('opacity-0');
+                document.body.style.overflow = 'auto'; // Restore scrolling
+                setTimeout(() => lightbox.classList.add('hidden'), 300);
+            };
+
+            closeBtn.addEventListener('click', closeLightboxHandler);
+            
+            // Close when clicking outside the image
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                    closeLightboxHandler();
+                }
+            });
+
+            // Close on Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+                    closeLightboxHandler();
+                }
+            });
+        });
+    </script>
 </body>
 </html>
