@@ -42,14 +42,14 @@
         .reveal.visible { opacity: 1; transform: translateY(0); }
 
         /* Line numbers appearance for code block */
-        #jsonCode {
+        .json-code-block {
             counter-reset: line;
         }
-        #jsonCode .line {
+        .json-code-block .line {
             counter-increment: line;
             display: block;
         }
-        #jsonCode .line::before {
+        .json-code-block .line::before {
             content: counter(line);
             display: inline-block;
             width: 3.5em;
@@ -99,50 +99,8 @@
 
         <!-- Curriculum Cards -->
         <section class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 w-full">
-            <div class="reveal">
-                <!-- Collapsible Item -->
-                <details id="csDetails" class="group bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden [&_summary::-webkit-details-marker]:hidden open:border-ocean-200 transition-all duration-300">
-                    <summary class="flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-medium hover:bg-gray-50 transition-colors duration-200 group-open:border-l-4 group-open:border-l-ocean-500 group-open:bg-ocean-50/30">
-                        <div class="flex items-center gap-3">
-                            <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-ocean-100 text-ocean-600 text-sm">
-                                <i class="fa-solid fa-laptop-code"></i>
-                            </div>
-                            <div>
-                                <h2 class="text-lg font-bold text-gray-900">Computer Science Online : 2025</h2>
-                                <p class="text-sm text-gray-500 font-normal">BSc Computer Science (FS-FI-BACS) &bull; 180 CP</p>
-                            </div>
-                        </div>
-                        <span class="shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3 group-open:-rotate-180 transition duration-300 shadow-sm border border-gray-100">
-                            <i class="fa-solid fa-chevron-down text-sm"></i>
-                        </span>
-                    </summary>
-
-                    <div class="p-5 pt-0 border-t border-gray-200 mt-0">
-                        <div class="flex justify-between items-center mb-4 mt-5">
-                            <span class="text-sm font-semibold text-gray-500 uppercase tracking-wider">JSON Payload</span>
-                            <button id="copyBtn" class="group/btn inline-flex items-center px-5 py-2.5 border border-transparent text-sm font-semibold rounded-lg shadow-sm text-white bg-ocean-600 hover:bg-ocean-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ocean-500 transition-all duration-200 active:scale-95">
-                                <i id="copyIcon" class="fa-regular fa-copy mr-2 transition-transform duration-200 group-hover/btn:scale-110"></i>
-                                <span id="copyText">Copy JSON</span>
-                            </button>
-                        </div>
-                        
-                        <div class="relative bg-gray-900 rounded-xl overflow-hidden border border-gray-700">
-                            <!-- File tab label -->
-                            <div class="flex items-center bg-gray-800 px-4 py-2 border-b border-gray-700">
-                                <div class="flex items-center gap-2 text-xs text-gray-400 font-mono">
-                                    <i class="fa-solid fa-file-code text-ocean-400"></i>
-                                    <span>curriculum_data.json</span>
-                                </div>
-                                <div class="ml-auto flex gap-1.5">
-                                    <span class="w-3 h-3 rounded-full bg-gray-600"></span>
-                                    <span class="w-3 h-3 rounded-full bg-gray-600"></span>
-                                    <span class="w-3 h-3 rounded-full bg-gray-600"></span>
-                                </div>
-                            </div>
-                            <pre class="p-4 text-sm text-gray-300 overflow-x-auto font-mono max-h-96 leading-relaxed"><code id="jsonCode"></code></pre>
-                        </div>
-                    </div>
-                </details>
+            <div id="curriculaContainer" class="reveal space-y-6">
+                <!-- Curricula will be dynamically injected here -->
             </div>
 
             <!-- Request Section -->
@@ -220,526 +178,112 @@
         </div>
     </footer>
 
+    <script src="curriculum_data.js"></script>
     <script>
-        const curriculumData = {
-  "programme": "BSc Computer Science (FS-FI-BACS)",
-  "total_credit_points": "180 CP",
-  "curriculum": [
-    {
-      "semester": 1,
-      "modules": [
-        {
-          "code": "DLBCSICS",
-          "name": "Introduction to Computer Science",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Information representation",
-            "Algorithms and data structures",
-            "Propositional logic / Boolean algebra",
-            "Hardware",
-            "Networks and the internet",
-            "Software",
-            "Computer science as a discipline"
-          ]
-        },
-        {
-          "code": "DLBIAWITT",
-          "name": "Introduction to Academic Work for IT and Technology",
-          "assessment": "Advanced Workbook",
-          "core_topics": [
-            "Everyday Knowledge vs. Academic Work",
-            "Working with Sources and Literature",
-            "Research Design",
-            "Writing an Academic Paper"
-          ]
-        },
-        {
-          "code": "DLBCSM1",
-          "name": "Mathematics I",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Basic definitions and terms of discrete mathematics",
-            "Sets and propositional logic",
-            "Number systems such as decimal and binary systems",
-            "Graphs and mappings",
-            "Selected topics of elementary number theory",
-            "Cryptography"
-          ]
-        },
-        {
-          "code": "DLBCSOOPJ",
-          "name": "Object-oriented Programming with Java",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Introduction to the Java language",
-            "Java language constructs",
-            "Introduction to object-oriented system developement",
-            "Inheritance",
-            "Object-oriented concepts",
-            "Exception handling",
-            "Interfaces"
-          ]
-        },
-        {
-          "code": "DLBCSDSJCL",
-          "name": "Data Structures and Java Class Library",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Programming style",
-            "Working with objects",
-            "External packages and libraries",
-            "Data structures",
-            "Strings and calendar",
-            "File system and data streams"
-          ]
-        },
-        {
-          "code": "DLBCSIDM",
-          "name": "Intercultural and Ethical Decision-Making",
-          "assessment": "Written Assessment: Case Study",
-          "core_topics": [
-            "Basics of Intercultural Competence",
-            "Cultural Concepts",
-            "Culture and Ethics",
-            "Intercultural Learning and Working",
-            "Case Studies for Cultural and Ethical Conflicts"
-          ]
-        }
-      ]
-    },
-    {
-      "semester": 2,
-      "modules": [
-        {
-          "code": "DLBCSM2",
-          "name": "Mathematics II",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Selected Topics of Linear Algebra",
-            "Selected Chapters on Graphs and Algorithms"
-          ]
-        },
-        {
-          "code": "DLBCSWAD",
-          "name": "Web Application Development",
-          "assessment": "Advanced Workbook",
-          "core_topics": [
-            "Architectural Foundations",
-            "Tools of web development",
-            "HTML",
-            "CSS",
-            "Javascript",
-            "Web application testing and security"
-          ]
-        },
-        {
-          "code": "DLBCSCW",
-          "name": "Collaborative Work",
-          "assessment": "Oral Assignment",
-          "core_topics": [
-            "Self-Directed and Collaborative Learning",
-            "Networking and Cooperation",
-            "Performance in (Virtual) Teams",
-            "Communication, Arguments, and Being Convincing",
-            "Potentials for Conflict and Managing Conflicts",
-            "Self-Management and Personal Skills"
-          ]
-        },
-        {
-          "code": "DLBDSSPDS-01",
-          "name": "Statistics: Probability and Descriptive Statistics",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Probability",
-            "Random Variables",
-            "Joint Distributions",
-            "Expectation and Variance",
-            "Inequalities and Limit Theorems"
-          ]
-        },
-        {
-          "code": "DLBCSCAOS",
-          "name": "Computer Architecture and Operating Systems",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Basic Concepts for Computer Architecture",
-            "Computer Architecture",
-            "Computer Hardware",
-            "Assembly Languages",
-            "Operating Systems Basics",
-            "Popular Operating Systems"
-          ]
-        },
-        {
-          "code": "DLBCSPJWD",
-          "name": "Project: Java and Web Development",
-          "assessment": "Portfolio",
-          "core_topics": [
-            "plan, design, develop, and evaluate small web applications"
-          ]
-        }
-      ]
-    },
-    {
-      "semester": 3,
-      "modules": [
-        {
-          "code": "DLBCSDMDS",
-          "name": "Database Modeling and Database Systems",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Fundamentals of relational databases",
-            "Simple database queries",
-            "Entity/Relationship (E/R) Diagrams",
-            "Database development",
-            "Complex database queries across multiple tables",
-            "Changing data in databases",
-            "NoSQL database systems"
-          ]
-        },
-        {
-          "code": "DLBDSPBDM",
-          "name": "Project: Build a Data Mart in SQL",
-          "assessment": "Portfolio",
-          "core_topics": [
-            "design, architect, and implement a working data-mart solution"
-          ]
-        },
-        {
-          "code": "DLBCSRE",
-          "name": "Requirements Engineering",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Basics of requirements engineering",
-            "Enterprise modeling",
-            "Requirement determination techniques",
-            "Techniques of requirements documentation",
-            "Testing and coordination of requirements",
-            "Managing requirements"
-          ]
-        },
-        {
-          "code": "DLBIBRVS_E",
-          "name": "Operating Systems, Computer Networks, and Distributed Systems",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Operating systems",
-            "Computer networks",
-            "Distributed systems",
-            "Mobile computing"
-          ]
-        },
-        {
-          "code": "DLBCSL-01",
-          "name": "Algorithms, Data Structures, and Programming Languages",
-          "assessment": "Exam or Advanced Workbook, 90 Minutes",
-          "core_topics": [
-            "Data Structures",
-            "Algorithm Design",
-            "Important Algorithms",
-            "Programming Paradigms and the Basic Terms of Programming Languages",
-            "Programme Analysis Tools",
-            "Overview of Common Programming Languages"
-          ]
-        },
-        {
-          "code": "DLBCSITSM-02",
-          "name": "IT Service Management",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "IT Service Management Basics and Terms",
-            "ITIL 4 - Basics and Four Dimensions",
-            "ITIL 4 - Service Value System",
-            "ITIL 4 - Principles",
-            "ITIL 4 - Practices",
-            "Information Security Management"
-          ]
-        }
-      ]
-    },
-    {
-      "semester": 4,
-      "modules": [
-        {
-          "code": "DLBCSPITSM",
-          "name": "Project: IT Service Management",
-          "assessment": "Written Assessment: Project Report",
-          "core_topics": [
-            "analyze typical problems and company situations from the area of IT service management"
-          ]
-        },
-        {
-          "code": "DLBCSTCSML",
-          "name": "Theoretical Computer Science and Mathematical Logic",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Proposition and predicate logic",
-            "Finite automata",
-            "Formal languages",
-            "Computability and Turing machines",
-            "Complexity theory",
-            "Petri nets"
-          ]
-        },
-        {
-          "code": "DLBDSIPWP",
-          "name": "Introduction to Programming with Python",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Variables and Data Types",
-            "Statements",
-            "Functions",
-            "Errors and Exceptions",
-            "Modules and Packages"
-          ]
-        },
-        {
-          "code": "DLBCSSQA",
-          "name": "Software Quality Assurance",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Systematic quality assurance of requirements, architectures, and processes",
-            "Systematic testing of software",
-            "Dynamic quality assurance: Testing",
-            "Static quality assurance: Surveying and measuring",
-            "Constructive quality management"
-          ]
-        },
-        {
-          "code": "DLBCSS",
-          "name": "Specification",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Basics of specification",
-            "Specification of user interfaces (GUIs)",
-            "Specification of components and their interfaces",
-            "Technical specification of detailed technical data models",
-            "Specification of business rules",
-            "Specification of data interfaces",
-            "Specification of web services"
-          ]
-        },
-        {
-          "code": "DLBCSPSE",
-          "name": "Project: Software Engineering",
-          "assessment": "Written Assessment: Project Report",
-          "core_topics": [
-            "implementation of software life cycle in small to medium-sized projects"
-          ]
-        }
-      ]
-    },
-    {
-      "semesters": [5, 6],
-      "specialisations_and_seminars": [
-        {
-          "code": "DLBCSSCTCS",
-          "name": "Seminar: Current Topics in Computer Science",
-          "assessment": "Written Assessment: Research Essay",
-          "core_topics": [
-            "dive deep into a specific topic within a sub-discipline of choice"
-          ]
-        },
-        {
-          "code": "DLBCSIDPITS",
-          "name": "Introduction to Data Protection and Cyber Security",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Fundamentals of IT Security",
-            "Data Protection",
-            "IT Security Management",
-            "Network and Communication Security"
-          ]
-        },
-        {
-          "code": "DLBCSCT-01",
-          "name": "Cryptography",
-          "assessment": "Written Assessment: Case Study",
-          "core_topics": [
-            "Protection Targets, Vulnerabilities, and Threats",
-            "Foundations of Cryptology and Its Core Components",
-            "Basic Cryptographic Applications",
-            "Authentication",
-            "Single Computer Security"
-          ]
-        },
-        {
-          "code": "DLSFPD",
-          "name": "Salesforce Platform Development",
-          "assessment": "Written Assessment: Project Report / Oral Project Report",
-          "core_topics": [
-            "data model, user interface, and business logic for custom applications",
-            "Apex, Visualforce and basic Lightning components"
-          ]
-        },
-        {
-          "code": "DLBCSEMSE",
-          "name": "Mobile Software Engineering",
-          "assessment": "Exam / Written Assessment: Project Report",
-          "core_topics": [
-            "Android System Architecture",
-            "Development Environment",
-            "Core Components of an Android App",
-            "Interaction between Application Components"
-          ]
-        },
-        {
-          "code": "DLBCSEBDCT",
-          "name": "Big Data and Cloud Technologies",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Cloud computing fundamentals",
-            "Introduction to serverless computing",
-            "Data types and data sources",
-            "Distributed systems",
-            "NoSQL approach to data storage"
-          ]
-        },
-        {
-          "code": "DLBCSEBI",
-          "name": "Business Intelligence",
-          "assessment": "Exam / Written Assessment: Project Report",
-          "core_topics": [
-            "Data Provision",
-            "Data Warehouse",
-            "Modeling of Multidimensional Data Spaces",
-            "Analysis Systems"
-          ]
-        },
-        {
-          "code": "DLBCSESEWP",
-          "name": "Software Engineering with Python",
-          "assessment": "Exam / Portfolio",
-          "core_topics": [
-            "Traditional and Agile project management",
-            "Testing",
-            "Software development paradigms",
-            "From model to production"
-          ]
-        },
-        {
-          "code": "DLBCSEITPAM",
-          "name": "IT Project and Architecture Management",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "IT application portfolio management",
-            "Modeling of IT enterprise architectures",
-            "Techniques for prioritization, cost-estimation, and project controlling",
-            "Organization and structure in IT project management"
-          ]
-        },
-        {
-          "code": "DLBWMP-02_E",
-          "name": "Mastering Prompts",
-          "assessment": "Exam / Portfolio",
-          "core_topics": [
-            "Modern AI Systems",
-            "Reinforcement Learning",
-            "Natural Language Processing (NLP)",
-            "Computer Vision"
-          ]
-        },
-        {
-          "code": "DLBKAENT_E",
-          "name": "Career Development",
-          "assessment": "Advanced Workbook / Concept Presentation",
-          "core_topics": [
-            "Career Theories and Models",
-            "Career Development",
-            "Personal Branding",
-            "Career Strategy"
-          ]
-        },
-        {
-          "code": "DLBSG_E",
-          "name": "Studium Generale I and II",
-          "assessment": "See Selected Course",
-          "core_topics": [
-            "Self-directed selection from the entire breadth of the IU distance learning program"
-          ]
-        },
-        {
-          "code": "DLSFPM",
-          "name": "Project: Salesforce Platform Management",
-          "assessment": "Written Assessment / Oral Project Report",
-          "core_topics": [
-            "manage customer relationships with Salesforce platform",
-            "manage the Salesforce service cloud"
-          ]
-        },
-        {
-          "code": "DLBAWSCLSP",
-          "name": "AWS Cloud Specialization",
-          "assessment": "Written Assessment: Project Report",
-          "core_topics": [
-            "AWS core infrastructure services including computing, storage, and networking",
-            "Solutions Architecture, Compliance & Security, and AI & Machine Learning"
-          ]
-        },
-        {
-          "code": "DLBEAIPTPICOP-01",
-          "name": "AI Prompting Techniques and Process Innovation with Copilot",
-          "assessment": "Portfolio / Written Assessment: Project Report",
-          "core_topics": [
-            "prompt design using the R.C.C.E. method",
-            "Microsoft Copilot functions and applications",
-            "ethical and data protection challenges"
-          ]
-        },
-        {
-          "code": "FSINTER",
-          "name": "Internship",
-          "assessment": "Internship Reflection Paper",
-          "core_topics": [
-            "Internship according to the Internship Regulations of the IU"
-          ]
-        }
-      ]
-    }
-  ]
-}
-;
-        
         document.addEventListener('DOMContentLoaded', () => {
-            const codeBlock = document.getElementById('jsonCode');
-            const jsonText = JSON.stringify(curriculumData, null, 2);
-
-            // Wrap each line in a span with class "line" for line-number styling
-            const lines = jsonText.split('\n');
-            codeBlock.innerHTML = lines.map(line => {
-                const escaped = line.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
-                return `<span class="line">${escaped}</span>`;
-            }).join('');
-            
-            const copyBtn = document.getElementById('copyBtn');
-            const copyIcon = document.getElementById('copyIcon');
-            const copyTextEl = document.getElementById('copyText');
+            const data = typeof curriculumData !== 'undefined' ? curriculumData : [];
+            const container = document.getElementById('curriculaContainer');
             const toast = document.getElementById('toast');
             
-            copyBtn.addEventListener('click', () => {
-                const textToCopy = JSON.stringify(curriculumData, null, 2);
-                navigator.clipboard.writeText(textToCopy).then(() => {
-                    // Swap icon to checkmark
-                    copyIcon.className = 'fa-solid fa-check mr-2 transition-transform duration-200';
-                    copyTextEl.textContent = 'Copied!';
-                    copyBtn.classList.add('bg-green-600');
-                    copyBtn.classList.remove('bg-ocean-600');
+            data.forEach((programmeData, index) => {
+                const id = 'prog-' + index;
+                
+                // Create details element
+                const details = document.createElement('details');
+                details.className = "group bg-white rounded-xl shadow-md border border-gray-200 overflow-hidden [&_summary::-webkit-details-marker]:hidden open:border-ocean-200 transition-all duration-300";
+                
+                // Summary
+                const titleParts = programmeData.programme.split(' (');
+                const name = titleParts[0];
+                
+                let icon = '<i class="fa-solid fa-laptop-code"></i>';
+                if (programmeData.programme.toLowerCase().includes('artificial intelligence')) {
+                    icon = '<i class="fa-solid fa-robot"></i>';
+                } else if (programmeData.programme.toLowerCase().includes('data science')) {
+                    icon = '<i class="fa-solid fa-database"></i>';
+                }
+                
+                const summary = document.createElement('summary');
+                summary.className = "flex cursor-pointer items-center justify-between gap-1.5 p-5 text-gray-900 font-medium hover:bg-gray-50 transition-colors duration-200 group-open:border-l-4 group-open:border-l-ocean-500 group-open:bg-ocean-50/30";
+                summary.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-lg bg-ocean-100 text-ocean-600 text-sm">
+                            ${icon}
+                        </div>
+                        <div>
+                            <h2 class="text-lg font-bold text-gray-900">${name}</h2>
+                            <p class="text-sm text-gray-500 font-normal">${programmeData.programme} &bull; ${programmeData.total_credit_points}</p>
+                        </div>
+                    </div>
+                    <span class="shrink-0 rounded-full bg-white p-1.5 text-gray-900 sm:p-3 group-open:-rotate-180 transition duration-300 shadow-sm border border-gray-100">
+                        <i class="fa-solid fa-chevron-down text-sm"></i>
+                    </span>
+                `;
+                
+                // Content
+                const content = document.createElement('div');
+                content.className = "p-5 pt-0 border-t border-gray-200 mt-0";
+                
+                const jsonText = JSON.stringify(programmeData, null, 2);
+                const lines = jsonText.split('\n').map(line => {
+                    const escaped = line.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+                    return '<span class="line">' + escaped + '</span>';
+                }).join('');
+                
+                content.innerHTML = `
+                    <div class="flex justify-between items-center mb-4 mt-5">
+                        <span class="text-sm font-semibold text-gray-500 uppercase tracking-wider">JSON Payload</span>
+                        <button id="copyBtn-${id}" class="group/btn inline-flex items-center px-5 py-2.5 border border-transparent text-sm font-semibold rounded-lg shadow-sm text-white bg-ocean-600 hover:bg-ocean-700 hover:scale-105 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-ocean-500 transition-all duration-200 active:scale-95">
+                            <i id="copyIcon-${id}" class="fa-regular fa-copy mr-2 transition-transform duration-200 group-hover/btn:scale-110"></i>
+                            <span id="copyText-${id}">Copy JSON</span>
+                        </button>
+                    </div>
+                    
+                    <div class="relative bg-gray-900 rounded-xl overflow-hidden border border-gray-700">
+                        <div class="flex items-center bg-gray-800 px-4 py-2 border-b border-gray-700">
+                            <div class="flex items-center gap-2 text-xs text-gray-400 font-mono">
+                                <i class="fa-solid fa-file-code text-ocean-400"></i>
+                                <span>curriculum_data.json [${name}]</span>
+                            </div>
+                            <div class="ml-auto flex gap-1.5">
+                                <span class="w-3 h-3 rounded-full bg-gray-600"></span>
+                                <span class="w-3 h-3 rounded-full bg-gray-600"></span>
+                                <span class="w-3 h-3 rounded-full bg-gray-600"></span>
+                            </div>
+                        </div>
+                        <pre class="p-4 text-sm text-gray-300 overflow-x-auto font-mono max-h-[600px] leading-relaxed"><code id="jsonCode-${id}" class="json-code-block">${lines}</code></pre>
+                    </div>
+                `;
+                
+                details.appendChild(summary);
+                details.appendChild(content);
+                container.appendChild(details);
+                
+                // Add copy event listener
+                const copyBtn = content.querySelector('#copyBtn-' + id);
+                const copyIcon = content.querySelector('#copyIcon-' + id);
+                const copyTextEl = content.querySelector('#copyText-' + id);
+                
+                copyBtn.addEventListener('click', () => {
+                    navigator.clipboard.writeText(jsonText).then(() => {
+                        copyIcon.className = 'fa-solid fa-check mr-2 transition-transform duration-200';
+                        copyTextEl.textContent = 'Copied!';
+                        copyBtn.classList.add('bg-green-600');
+                        copyBtn.classList.remove('bg-ocean-600');
 
-                    // Show toast
-                    toast.classList.remove('translate-y-full', 'opacity-0');
+                        toast.classList.remove('translate-y-full', 'opacity-0');
 
-                    setTimeout(() => {
-                        // Restore original button state
-                        copyIcon.className = 'fa-regular fa-copy mr-2 transition-transform duration-200 group-hover/btn:scale-110';
-                        copyTextEl.textContent = 'Copy JSON';
-                        copyBtn.classList.remove('bg-green-600');
-                        copyBtn.classList.add('bg-ocean-600');
-                        // Hide toast
-                        toast.classList.add('translate-y-full', 'opacity-0');
-                    }, 3000);
-                }).catch(err => {
-                    console.error('Failed to copy text: ', err);
-                    alert('Failed to copy. Please select the text manually.');
+                        setTimeout(() => {
+                            copyIcon.className = 'fa-regular fa-copy mr-2 transition-transform duration-200 group-hover/btn:scale-110';
+                            copyTextEl.textContent = 'Copy JSON';
+                            copyBtn.classList.remove('bg-green-600');
+                            copyBtn.classList.add('bg-ocean-600');
+                            toast.classList.add('translate-y-full', 'opacity-0');
+                        }, 3000);
+                    }).catch(err => {
+                        console.error('Failed to copy text: ', err);
+                        alert('Failed to copy. Please select the text manually.');
+                    });
                 });
             });
 

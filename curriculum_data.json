@@ -1,477 +1,933 @@
-{
-  "programme": "BSc Computer Science (FS-FI-BACS)",
-  "total_credit_points": "180 CP",
-  "curriculum": [
+[
     {
-      "semester": 1,
-      "modules": [
-        {
-          "code": "DLBCSICS",
-          "name": "Introduction to Computer Science",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Information representation",
-            "Algorithms and data structures",
-            "Propositional logic / Boolean algebra",
-            "Hardware",
-            "Networks and the internet",
-            "Software",
-            "Computer science as a discipline"
-          ]
-        },
-        {
-          "code": "DLBIAWITT",
-          "name": "Introduction to Academic Work for IT and Technology",
-          "assessment": "Advanced Workbook",
-          "core_topics": [
-            "Everyday Knowledge vs. Academic Work",
-            "Working with Sources and Literature",
-            "Research Design",
-            "Writing an Academic Paper"
-          ]
-        },
-        {
-          "code": "DLBCSM1",
-          "name": "Mathematics I",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Basic definitions and terms of discrete mathematics",
-            "Sets and propositional logic",
-            "Number systems such as decimal and binary systems",
-            "Graphs and mappings",
-            "Selected topics of elementary number theory",
-            "Cryptography"
-          ]
-        },
-        {
-          "code": "DLBCSOOPJ",
-          "name": "Object-oriented Programming with Java",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Introduction to the Java language",
-            "Java language constructs",
-            "Introduction to object-oriented system developement",
-            "Inheritance",
-            "Object-oriented concepts",
-            "Exception handling",
-            "Interfaces"
-          ]
-        },
-        {
-          "code": "DLBCSDSJCL",
-          "name": "Data Structures and Java Class Library",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Programming style",
-            "Working with objects",
-            "External packages and libraries",
-            "Data structures",
-            "Strings and calendar",
-            "File system and data streams"
-          ]
-        },
-        {
-          "code": "DLBCSIDM",
-          "name": "Intercultural and Ethical Decision-Making",
-          "assessment": "Written Assessment: Case Study",
-          "core_topics": [
-            "Basics of Intercultural Competence",
-            "Cultural Concepts",
-            "Culture and Ethics",
-            "Intercultural Learning and Working",
-            "Case Studies for Cultural and Ethical Conflicts"
-          ]
-        }
-      ]
+        "programme": "BSc Computer Science (FS-FI-BACS)",
+        "total_credit_points": "180 CP",
+        "curriculum": [
+            {
+                "semester": 1,
+                "modules": [
+                    {
+                        "code": "DLBCSICS",
+                        "name": "Introduction to Computer Science",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Information representation",
+                            "Algorithms and data structures",
+                            "Propositional logic / Boolean algebra",
+                            "Hardware",
+                            "Networks and the internet",
+                            "Software",
+                            "Computer science as a discipline"
+                        ]
+                    },
+                    {
+                        "code": "DLBIAWITT",
+                        "name": "Introduction to Academic Work for IT and Technology",
+                        "assessment": "Advanced Workbook",
+                        "core_topics": [
+                            "Everyday Knowledge vs. Academic Work",
+                            "Working with Sources and Literature",
+                            "Research Design",
+                            "Writing an Academic Paper"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSM1",
+                        "name": "Mathematics I",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Basic definitions and terms of discrete mathematics",
+                            "Sets and propositional logic",
+                            "Number systems such as decimal and binary systems",
+                            "Graphs and mappings",
+                            "Selected topics of elementary number theory",
+                            "Cryptography"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSOOPJ",
+                        "name": "Object-oriented Programming with Java",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Introduction to the Java language",
+                            "Java language constructs",
+                            "Introduction to object-oriented system developement",
+                            "Inheritance",
+                            "Object-oriented concepts",
+                            "Exception handling",
+                            "Interfaces"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSDSJCL",
+                        "name": "Data Structures and Java Class Library",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Programming style",
+                            "Working with objects",
+                            "External packages and libraries",
+                            "Data structures",
+                            "Strings and calendar",
+                            "File system and data streams"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSIDM",
+                        "name": "Intercultural and Ethical Decision-Making",
+                        "assessment": "Written Assessment: Case Study",
+                        "core_topics": [
+                            "Basics of Intercultural Competence",
+                            "Cultural Concepts",
+                            "Culture and Ethics",
+                            "Intercultural Learning and Working",
+                            "Case Studies for Cultural and Ethical Conflicts"
+                        ]
+                    }
+                ]
+            },
+            {
+                "semester": 2,
+                "modules": [
+                    {
+                        "code": "DLBCSM2",
+                        "name": "Mathematics II",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Selected Topics of Linear Algebra",
+                            "Selected Chapters on Graphs and Algorithms"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSWAD",
+                        "name": "Web Application Development",
+                        "assessment": "Advanced Workbook",
+                        "core_topics": [
+                            "Architectural Foundations",
+                            "Tools of web development",
+                            "HTML",
+                            "CSS",
+                            "Javascript",
+                            "Web application testing and security"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSCW",
+                        "name": "Collaborative Work",
+                        "assessment": "Oral Assignment",
+                        "core_topics": [
+                            "Self-Directed and Collaborative Learning",
+                            "Networking and Cooperation",
+                            "Performance in (Virtual) Teams",
+                            "Communication, Arguments, and Being Convincing",
+                            "Potentials for Conflict and Managing Conflicts",
+                            "Self-Management and Personal Skills"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSSPDS-01",
+                        "name": "Statistics: Probability and Descriptive Statistics",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Probability",
+                            "Random Variables",
+                            "Joint Distributions",
+                            "Expectation and Variance",
+                            "Inequalities and Limit Theorems"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSCAOS",
+                        "name": "Computer Architecture and Operating Systems",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Basic Concepts for Computer Architecture",
+                            "Computer Architecture",
+                            "Computer Hardware",
+                            "Assembly Languages",
+                            "Operating Systems Basics",
+                            "Popular Operating Systems"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSPJWD",
+                        "name": "Project: Java and Web Development",
+                        "assessment": "Portfolio",
+                        "core_topics": [
+                            "plan, design, develop, and evaluate small web applications"
+                        ]
+                    }
+                ]
+            },
+            {
+                "semester": 3,
+                "modules": [
+                    {
+                        "code": "DLBCSDMDS",
+                        "name": "Database Modeling and Database Systems",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Fundamentals of relational databases",
+                            "Simple database queries",
+                            "Entity/Relationship (E/R) Diagrams",
+                            "Database development",
+                            "Complex database queries across multiple tables",
+                            "Changing data in databases",
+                            "NoSQL database systems"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSPBDM",
+                        "name": "Project: Build a Data Mart in SQL",
+                        "assessment": "Portfolio",
+                        "core_topics": [
+                            "design, architect, and implement a working data-mart solution"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSRE",
+                        "name": "Requirements Engineering",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Basics of requirements engineering",
+                            "Enterprise modeling",
+                            "Requirement determination techniques",
+                            "Techniques of requirements documentation",
+                            "Testing and coordination of requirements",
+                            "Managing requirements"
+                        ]
+                    },
+                    {
+                        "code": "DLBIBRVS_E",
+                        "name": "Operating Systems, Computer Networks, and Distributed Systems",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Operating systems",
+                            "Computer networks",
+                            "Distributed systems",
+                            "Mobile computing"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSL-01",
+                        "name": "Algorithms, Data Structures, and Programming Languages",
+                        "assessment": "Exam or Advanced Workbook, 90 Minutes",
+                        "core_topics": [
+                            "Data Structures",
+                            "Algorithm Design",
+                            "Important Algorithms",
+                            "Programming Paradigms and the Basic Terms of Programming Languages",
+                            "Programme Analysis Tools",
+                            "Overview of Common Programming Languages"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSITSM-02",
+                        "name": "IT Service Management",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "IT Service Management Basics and Terms",
+                            "ITIL 4 - Basics and Four Dimensions",
+                            "ITIL 4 - Service Value System",
+                            "ITIL 4 - Principles",
+                            "ITIL 4 - Practices",
+                            "Information Security Management"
+                        ]
+                    }
+                ]
+            },
+            {
+                "semester": 4,
+                "modules": [
+                    {
+                        "code": "DLBCSPITSM",
+                        "name": "Project: IT Service Management",
+                        "assessment": "Written Assessment: Project Report",
+                        "core_topics": [
+                            "analyze typical problems and company situations from the area of IT service management"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSTCSML",
+                        "name": "Theoretical Computer Science and Mathematical Logic",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Proposition and predicate logic",
+                            "Finite automata",
+                            "Formal languages",
+                            "Computability and Turing machines",
+                            "Complexity theory",
+                            "Petri nets"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSIPWP",
+                        "name": "Introduction to Programming with Python",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Variables and Data Types",
+                            "Statements",
+                            "Functions",
+                            "Errors and Exceptions",
+                            "Modules and Packages"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSSQA",
+                        "name": "Software Quality Assurance",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Systematic quality assurance of requirements, architectures, and processes",
+                            "Systematic testing of software",
+                            "Dynamic quality assurance: Testing",
+                            "Static quality assurance: Surveying and measuring",
+                            "Constructive quality management"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSS",
+                        "name": "Specification",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Basics of specification",
+                            "Specification of user interfaces (GUIs)",
+                            "Specification of components and their interfaces",
+                            "Technical specification of detailed technical data models",
+                            "Specification of business rules",
+                            "Specification of data interfaces",
+                            "Specification of web services"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSPSE",
+                        "name": "Project: Software Engineering",
+                        "assessment": "Written Assessment: Project Report",
+                        "core_topics": [
+                            "implementation of software life cycle in small to medium-sized projects"
+                        ]
+                    }
+                ]
+            },
+            {
+                "semesters": [
+                    5,
+                    6
+                ],
+                "specialisations_and_seminars": [
+                    {
+                        "code": "DLBCSSCTCS",
+                        "name": "Seminar: Current Topics in Computer Science",
+                        "assessment": "Written Assessment: Research Essay",
+                        "core_topics": [
+                            "dive deep into a specific topic within a sub-discipline of choice"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSIDPITS",
+                        "name": "Introduction to Data Protection and Cyber Security",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Fundamentals of IT Security",
+                            "Data Protection",
+                            "IT Security Management",
+                            "Network and Communication Security"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSCT-01",
+                        "name": "Cryptography",
+                        "assessment": "Written Assessment: Case Study",
+                        "core_topics": [
+                            "Protection Targets, Vulnerabilities, and Threats",
+                            "Foundations of Cryptology and Its Core Components",
+                            "Basic Cryptographic Applications",
+                            "Authentication",
+                            "Single Computer Security"
+                        ]
+                    },
+                    {
+                        "code": "DLSFPD",
+                        "name": "Salesforce Platform Development",
+                        "assessment": "Written Assessment: Project Report / Oral Project Report",
+                        "core_topics": [
+                            "data model, user interface, and business logic for custom applications",
+                            "Apex, Visualforce and basic Lightning components"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSEMSE",
+                        "name": "Mobile Software Engineering",
+                        "assessment": "Exam / Written Assessment: Project Report",
+                        "core_topics": [
+                            "Android System Architecture",
+                            "Development Environment",
+                            "Core Components of an Android App",
+                            "Interaction between Application Components"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSEBDCT",
+                        "name": "Big Data and Cloud Technologies",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Cloud computing fundamentals",
+                            "Introduction to serverless computing",
+                            "Data types and data sources",
+                            "Distributed systems",
+                            "NoSQL approach to data storage"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSEBI",
+                        "name": "Business Intelligence",
+                        "assessment": "Exam / Written Assessment: Project Report",
+                        "core_topics": [
+                            "Data Provision",
+                            "Data Warehouse",
+                            "Modeling of Multidimensional Data Spaces",
+                            "Analysis Systems"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSESEWP",
+                        "name": "Software Engineering with Python",
+                        "assessment": "Exam / Portfolio",
+                        "core_topics": [
+                            "Traditional and Agile project management",
+                            "Testing",
+                            "Software development paradigms",
+                            "From model to production"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSEITPAM",
+                        "name": "IT Project and Architecture Management",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "IT application portfolio management",
+                            "Modeling of IT enterprise architectures",
+                            "Techniques for prioritization, cost-estimation, and project controlling",
+                            "Organization and structure in IT project management"
+                        ]
+                    },
+                    {
+                        "code": "DLBWMP-02_E",
+                        "name": "Mastering Prompts",
+                        "assessment": "Exam / Portfolio",
+                        "core_topics": [
+                            "Modern AI Systems",
+                            "Reinforcement Learning",
+                            "Natural Language Processing (NLP)",
+                            "Computer Vision"
+                        ]
+                    },
+                    {
+                        "code": "DLBKAENT_E",
+                        "name": "Career Development",
+                        "assessment": "Advanced Workbook / Concept Presentation",
+                        "core_topics": [
+                            "Career Theories and Models",
+                            "Career Development",
+                            "Personal Branding",
+                            "Career Strategy"
+                        ]
+                    },
+                    {
+                        "code": "DLBSG_E",
+                        "name": "Studium Generale I and II",
+                        "assessment": "See Selected Course",
+                        "core_topics": [
+                            "Self-directed selection from the entire breadth of the IU distance learning program"
+                        ]
+                    },
+                    {
+                        "code": "DLSFPM",
+                        "name": "Project: Salesforce Platform Management",
+                        "assessment": "Written Assessment / Oral Project Report",
+                        "core_topics": [
+                            "manage customer relationships with Salesforce platform",
+                            "manage the Salesforce service cloud"
+                        ]
+                    },
+                    {
+                        "code": "DLBAWSCLSP",
+                        "name": "AWS Cloud Specialization",
+                        "assessment": "Written Assessment: Project Report",
+                        "core_topics": [
+                            "AWS core infrastructure services including computing, storage, and networking",
+                            "Solutions Architecture, Compliance \u0026 Security, and AI \u0026 Machine Learning"
+                        ]
+                    },
+                    {
+                        "code": "DLBEAIPTPICOP-01",
+                        "name": "AI Prompting Techniques and Process Innovation with Copilot",
+                        "assessment": "Portfolio / Written Assessment: Project Report",
+                        "core_topics": [
+                            "prompt design using the R.C.C.E. method",
+                            "Microsoft Copilot functions and applications",
+                            "ethical and data protection challenges"
+                        ]
+                    },
+                    {
+                        "code": "FSINTER",
+                        "name": "Internship",
+                        "assessment": "Internship Reflection Paper",
+                        "core_topics": [
+                            "Internship according to the Internship Regulations of the IU"
+                        ]
+                    }
+                ]
+            }
+        ]
     },
     {
-      "semester": 2,
-      "modules": [
-        {
-          "code": "DLBCSM2",
-          "name": "Mathematics II",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Selected Topics of Linear Algebra",
-            "Selected Chapters on Graphs and Algorithms"
-          ]
-        },
-        {
-          "code": "DLBCSWAD",
-          "name": "Web Application Development",
-          "assessment": "Advanced Workbook",
-          "core_topics": [
-            "Architectural Foundations",
-            "Tools of web development",
-            "HTML",
-            "CSS",
-            "Javascript",
-            "Web application testing and security"
-          ]
-        },
-        {
-          "code": "DLBCSCW",
-          "name": "Collaborative Work",
-          "assessment": "Oral Assignment",
-          "core_topics": [
-            "Self-Directed and Collaborative Learning",
-            "Networking and Cooperation",
-            "Performance in (Virtual) Teams",
-            "Communication, Arguments, and Being Convincing",
-            "Potentials for Conflict and Managing Conflicts",
-            "Self-Management and Personal Skills"
-          ]
-        },
-        {
-          "code": "DLBDSSPDS-01",
-          "name": "Statistics: Probability and Descriptive Statistics",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Probability",
-            "Random Variables",
-            "Joint Distributions",
-            "Expectation and Variance",
-            "Inequalities and Limit Theorems"
-          ]
-        },
-        {
-          "code": "DLBCSCAOS",
-          "name": "Computer Architecture and Operating Systems",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Basic Concepts for Computer Architecture",
-            "Computer Architecture",
-            "Computer Hardware",
-            "Assembly Languages",
-            "Operating Systems Basics",
-            "Popular Operating Systems"
-          ]
-        },
-        {
-          "code": "DLBCSPJWD",
-          "name": "Project: Java and Web Development",
-          "assessment": "Portfolio",
-          "core_topics": [
-            "plan, design, develop, and evaluate small web applications"
-          ]
-        }
-      ]
-    },
-    {
-      "semester": 3,
-      "modules": [
-        {
-          "code": "DLBCSDMDS",
-          "name": "Database Modeling and Database Systems",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Fundamentals of relational databases",
-            "Simple database queries",
-            "Entity/Relationship (E/R) Diagrams",
-            "Database development",
-            "Complex database queries across multiple tables",
-            "Changing data in databases",
-            "NoSQL database systems"
-          ]
-        },
-        {
-          "code": "DLBDSPBDM",
-          "name": "Project: Build a Data Mart in SQL",
-          "assessment": "Portfolio",
-          "core_topics": [
-            "design, architect, and implement a working data-mart solution"
-          ]
-        },
-        {
-          "code": "DLBCSRE",
-          "name": "Requirements Engineering",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Basics of requirements engineering",
-            "Enterprise modeling",
-            "Requirement determination techniques",
-            "Techniques of requirements documentation",
-            "Testing and coordination of requirements",
-            "Managing requirements"
-          ]
-        },
-        {
-          "code": "DLBIBRVS_E",
-          "name": "Operating Systems, Computer Networks, and Distributed Systems",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Operating systems",
-            "Computer networks",
-            "Distributed systems",
-            "Mobile computing"
-          ]
-        },
-        {
-          "code": "DLBCSL-01",
-          "name": "Algorithms, Data Structures, and Programming Languages",
-          "assessment": "Exam or Advanced Workbook, 90 Minutes",
-          "core_topics": [
-            "Data Structures",
-            "Algorithm Design",
-            "Important Algorithms",
-            "Programming Paradigms and the Basic Terms of Programming Languages",
-            "Programme Analysis Tools",
-            "Overview of Common Programming Languages"
-          ]
-        },
-        {
-          "code": "DLBCSITSM-02",
-          "name": "IT Service Management",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "IT Service Management Basics and Terms",
-            "ITIL 4 - Basics and Four Dimensions",
-            "ITIL 4 - Service Value System",
-            "ITIL 4 - Principles",
-            "ITIL 4 - Practices",
-            "Information Security Management"
-          ]
-        }
-      ]
-    },
-    {
-      "semester": 4,
-      "modules": [
-        {
-          "code": "DLBCSPITSM",
-          "name": "Project: IT Service Management",
-          "assessment": "Written Assessment: Project Report",
-          "core_topics": [
-            "analyze typical problems and company situations from the area of IT service management"
-          ]
-        },
-        {
-          "code": "DLBCSTCSML",
-          "name": "Theoretical Computer Science and Mathematical Logic",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Proposition and predicate logic",
-            "Finite automata",
-            "Formal languages",
-            "Computability and Turing machines",
-            "Complexity theory",
-            "Petri nets"
-          ]
-        },
-        {
-          "code": "DLBDSIPWP",
-          "name": "Introduction to Programming with Python",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Variables and Data Types",
-            "Statements",
-            "Functions",
-            "Errors and Exceptions",
-            "Modules and Packages"
-          ]
-        },
-        {
-          "code": "DLBCSSQA",
-          "name": "Software Quality Assurance",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Systematic quality assurance of requirements, architectures, and processes",
-            "Systematic testing of software",
-            "Dynamic quality assurance: Testing",
-            "Static quality assurance: Surveying and measuring",
-            "Constructive quality management"
-          ]
-        },
-        {
-          "code": "DLBCSS",
-          "name": "Specification",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Basics of specification",
-            "Specification of user interfaces (GUIs)",
-            "Specification of components and their interfaces",
-            "Technical specification of detailed technical data models",
-            "Specification of business rules",
-            "Specification of data interfaces",
-            "Specification of web services"
-          ]
-        },
-        {
-          "code": "DLBCSPSE",
-          "name": "Project: Software Engineering",
-          "assessment": "Written Assessment: Project Report",
-          "core_topics": [
-            "implementation of software life cycle in small to medium-sized projects"
-          ]
-        }
-      ]
-    },
-    {
-      "semesters": [5, 6],
-      "specialisations_and_seminars": [
-        {
-          "code": "DLBCSSCTCS",
-          "name": "Seminar: Current Topics in Computer Science",
-          "assessment": "Written Assessment: Research Essay",
-          "core_topics": [
-            "dive deep into a specific topic within a sub-discipline of choice"
-          ]
-        },
-        {
-          "code": "DLBCSIDPITS",
-          "name": "Introduction to Data Protection and Cyber Security",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Fundamentals of IT Security",
-            "Data Protection",
-            "IT Security Management",
-            "Network and Communication Security"
-          ]
-        },
-        {
-          "code": "DLBCSCT-01",
-          "name": "Cryptography",
-          "assessment": "Written Assessment: Case Study",
-          "core_topics": [
-            "Protection Targets, Vulnerabilities, and Threats",
-            "Foundations of Cryptology and Its Core Components",
-            "Basic Cryptographic Applications",
-            "Authentication",
-            "Single Computer Security"
-          ]
-        },
-        {
-          "code": "DLSFPD",
-          "name": "Salesforce Platform Development",
-          "assessment": "Written Assessment: Project Report / Oral Project Report",
-          "core_topics": [
-            "data model, user interface, and business logic for custom applications",
-            "Apex, Visualforce and basic Lightning components"
-          ]
-        },
-        {
-          "code": "DLBCSEMSE",
-          "name": "Mobile Software Engineering",
-          "assessment": "Exam / Written Assessment: Project Report",
-          "core_topics": [
-            "Android System Architecture",
-            "Development Environment",
-            "Core Components of an Android App",
-            "Interaction between Application Components"
-          ]
-        },
-        {
-          "code": "DLBCSEBDCT",
-          "name": "Big Data and Cloud Technologies",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "Cloud computing fundamentals",
-            "Introduction to serverless computing",
-            "Data types and data sources",
-            "Distributed systems",
-            "NoSQL approach to data storage"
-          ]
-        },
-        {
-          "code": "DLBCSEBI",
-          "name": "Business Intelligence",
-          "assessment": "Exam / Written Assessment: Project Report",
-          "core_topics": [
-            "Data Provision",
-            "Data Warehouse",
-            "Modeling of Multidimensional Data Spaces",
-            "Analysis Systems"
-          ]
-        },
-        {
-          "code": "DLBCSESEWP",
-          "name": "Software Engineering with Python",
-          "assessment": "Exam / Portfolio",
-          "core_topics": [
-            "Traditional and Agile project management",
-            "Testing",
-            "Software development paradigms",
-            "From model to production"
-          ]
-        },
-        {
-          "code": "DLBCSEITPAM",
-          "name": "IT Project and Architecture Management",
-          "assessment": "Exam, 90 Minutes",
-          "core_topics": [
-            "IT application portfolio management",
-            "Modeling of IT enterprise architectures",
-            "Techniques for prioritization, cost-estimation, and project controlling",
-            "Organization and structure in IT project management"
-          ]
-        },
-        {
-          "code": "DLBWMP-02_E",
-          "name": "Mastering Prompts",
-          "assessment": "Exam / Portfolio",
-          "core_topics": [
-            "Modern AI Systems",
-            "Reinforcement Learning",
-            "Natural Language Processing (NLP)",
-            "Computer Vision"
-          ]
-        },
-        {
-          "code": "DLBKAENT_E",
-          "name": "Career Development",
-          "assessment": "Advanced Workbook / Concept Presentation",
-          "core_topics": [
-            "Career Theories and Models",
-            "Career Development",
-            "Personal Branding",
-            "Career Strategy"
-          ]
-        },
-        {
-          "code": "DLBSG_E",
-          "name": "Studium Generale I and II",
-          "assessment": "See Selected Course",
-          "core_topics": [
-            "Self-directed selection from the entire breadth of the IU distance learning program"
-          ]
-        },
-        {
-          "code": "DLSFPM",
-          "name": "Project: Salesforce Platform Management",
-          "assessment": "Written Assessment / Oral Project Report",
-          "core_topics": [
-            "manage customer relationships with Salesforce platform",
-            "manage the Salesforce service cloud"
-          ]
-        },
-        {
-          "code": "DLBAWSCLSP",
-          "name": "AWS Cloud Specialization",
-          "assessment": "Written Assessment: Project Report",
-          "core_topics": [
-            "AWS core infrastructure services including computing, storage, and networking",
-            "Solutions Architecture, Compliance & Security, and AI & Machine Learning"
-          ]
-        },
-        {
-          "code": "DLBEAIPTPICOP-01",
-          "name": "AI Prompting Techniques and Process Innovation with Copilot",
-          "assessment": "Portfolio / Written Assessment: Project Report",
-          "core_topics": [
-            "prompt design using the R.C.C.E. method",
-            "Microsoft Copilot functions and applications",
-            "ethical and data protection challenges"
-          ]
-        },
-        {
-          "code": "FSINTER",
-          "name": "Internship",
-          "assessment": "Internship Reflection Paper",
-          "core_topics": [
-            "Internship according to the Internship Regulations of the IU"
-          ]
-        }
-      ]
+        "programme": "BSc Applied Artificial Intelligence (FS-OI-BAAI)",
+        "total_credit_points": "180 CP",
+        "curriculum": [
+            {
+                "semester": 1,
+                "modules": [
+                    {
+                        "code": "DLBCSIAW",
+                        "name": "Introduction to Academic Work",
+                        "assessment": "Basic Workbook (passed / not passed)",
+                        "core_topics": [
+                            "Scientific Theoretical Foundations and Research Paradigms",
+                            "Application of Good Scientific Practice",
+                            "Methodology",
+                            "Librarianship: Structure, Use, and Literature Management",
+                            "Forms of Scientific Work at IU"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSIPWP",
+                        "name": "Introduction to Programming with Python",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Python as a programming language for data science",
+                            "Variables and built-in datatypes",
+                            "Statements and functions",
+                            "Error and exception handling",
+                            "Important Python data science modules"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSMFC",
+                        "name": "Mathematics: Analysis",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Sequences and series",
+                            "Functions \u0026 reverse functions",
+                            "differential calculus",
+                            "integral calculus"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSCW",
+                        "name": "Collaborative Work",
+                        "assessment": "Oral Assignment",
+                        "core_topics": [
+                            "Self-Directed and Collaborative Learning",
+                            "Networking and Cooperation",
+                            "Performance in (Virtual) Teams",
+                            "Communication, Arguments, and Being Convincing",
+                            "Potentials for Conflict and Managing Conflicts",
+                            "Self-Management and Personal Skills"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSSPDS-01",
+                        "name": "Statistics: Probability and Descriptive Statistics",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Probability",
+                            "Random variables",
+                            "Joint distributions",
+                            "Expectation and variance",
+                            "Inequalities and limit theorems"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSEAIS1",
+                        "name": "Artificial Intelligence",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Historical developments in artificial intelligence",
+                            "Approach of contemporary AI systems",
+                            "Concepts behind reinforcement learning",
+                            "Natural language using basic NLP techniques",
+                            "Scrutinize images and their contents"
+                        ]
+                    }
+                ]
+            },
+            {
+                "semester": 2,
+                "modules": [
+                    {
+                        "code": "DLBDSOOFPP",
+                        "name": "Object Oriented and Functional Programming with Python",
+                        "assessment": "Portfolio",
+                        "core_topics": [
+                            "Advanced programming concepts of object orientation and functional programming in Python"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSMFLA",
+                        "name": "Mathematics: Linear Algebra",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Matrix Algebra",
+                            "Vector Spaces",
+                            "Linear and Affine Transformations",
+                            "Analytical Geometry",
+                            "Matrix Decomposition"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSIDM",
+                        "name": "Intercultural and Ethical Decision-Making",
+                        "assessment": "Written Assessment: Case Study",
+                        "core_topics": [
+                            "Basics of Intercultural Competence",
+                            "Cultural Concepts",
+                            "Culture and Ethics",
+                            "Implications of Current Ethical Problems in the Area of Interculturality, Ethics, and Diversity",
+                            "Intercultural Learning and Working",
+                            "Case Studies for Cultural and Ethical Conflicts"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSSIS",
+                        "name": "Statistics - Inferential Statistics",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Point estimation",
+                            "Uncertainties",
+                            "Bayesian inference \u0026 non-parametric techniques",
+                            "Statistical testing",
+                            "Statistical decision theory"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSCC",
+                        "name": "Cloud Computing",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Cloud computing fundamentals",
+                            "Relevant enabling technologies for cloud computing",
+                            "Introduction to serverless computing",
+                            "Established cloud platforms",
+                            "Cloud offerings for data science and analytics"
+                        ]
+                    },
+                    {
+                        "code": "DLBSEPCP_E",
+                        "name": "Cloud Programming",
+                        "assessment": "Portfolio",
+                        "core_topics": [
+                            "Plan, create, test, and document a scalable service deployed in the cloud"
+                        ]
+                    }
+                ]
+            },
+            {
+                "semester": 3,
+                "modules": [
+                    {
+                        "code": "DLBDSMLSL",
+                        "name": "Machine Learning - Supervised Learning",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Types of machine learning",
+                            "Classification",
+                            "Regression",
+                            "Support vector machines",
+                            "Decision trees"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSMLUSL",
+                        "name": "Machine Learning - Unsupervised Learning and Feature Engineering",
+                        "assessment": "Written Assessment: Case Study",
+                        "core_topics": [
+                            "Unsupervised machine learning",
+                            "Clustering",
+                            "Dimensionality reduction",
+                            "Manifold learning",
+                            "Feature engineering",
+                            "Feature selection",
+                            "Automation of feature generation and selection"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSNNDL",
+                        "name": "Neural Nets and Deep Learning",
+                        "assessment": "Oral Assignment",
+                        "core_topics": [
+                            "Introduction to neural networks",
+                            "Feed-forward networks",
+                            "Avoiding overtraining",
+                            "Convolutional neural networks",
+                            "Recurrent neural networks"
+                        ]
+                    },
+                    {
+                        "code": "DLBAIICV",
+                        "name": "Introduction to Computer Vision",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Vision Fundamentals",
+                            "Image Filtering",
+                            "Low-Level Vision",
+                            "High-Level Vision",
+                            "Video"
+                        ]
+                    },
+                    {
+                        "code": "DLBAIPCV",
+                        "name": "Project: Computer Vision",
+                        "assessment": "Written Assessment: Project Report",
+                        "core_topics": [
+                            "Practical implementation of a Computer Vision use case"
+                        ]
+                    },
+                    {
+                        "code": "DLBAIIRL",
+                        "name": "Introduction to Reinforcement Learning",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Introduction to Reinforcement Learning",
+                            "Sequential Decision Process",
+                            "Dynamic Programming",
+                            "Temporal-Difference Learning",
+                            "Deep Reinforcement Learning"
+                        ]
+                    }
+                ]
+            },
+            {
+                "semester": 4,
+                "modules": [
+                    {
+                        "code": "DLBAIINLP",
+                        "name": "Introduction to NLP",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Introduction to NLP",
+                            "Important methods in NLP",
+                            "Relevant Applications in NLP",
+                            "Challenges in NLP"
+                        ]
+                    },
+                    {
+                        "code": "DLBAIPNLP",
+                        "name": "Project: NLP",
+                        "assessment": "Written Assessment: Project Report",
+                        "core_topics": [
+                            "Implementation of real-world NLP applications"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSIDPITS",
+                        "name": "Introduction to Data Protection and Cyber Security",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Fundamentals of IT Security",
+                            "Data Protection",
+                            "IT Security Management",
+                            "Network and Communication Security"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSDSSE",
+                        "name": "Data Science Software Engineering",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Traditional project management",
+                            "Agile project management",
+                            "Testing",
+                            "Software development paradigms",
+                            "From model to production"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSMTP",
+                        "name": "Project: From Model to Production",
+                        "assessment": "Oral Project Report",
+                        "core_topics": [
+                            "Integration of a predictive model into an enterprise-grade application or service"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSSECDS",
+                        "name": "Seminar: Ethical Considerations in Data Science",
+                        "assessment": "Written Assessment: Research Essay",
+                        "core_topics": [
+                            "Ethical implications of data science techniques and methodologies"
+                        ]
+                    }
+                ]
+            },
+            {
+                "semesters": [
+                    5,
+                    6
+                ],
+                "specialisations_and_seminars": [
+                    {
+                        "code": "DLBMIUEX1_E / DLBMIUEX2_E",
+                        "name": "User Experience / UX-Project",
+                        "assessment": "Exam / Written Assessment: Project Report",
+                        "core_topics": [
+                            "Basics of User Experience, Customer Journey, UX Evaluation, Information Design"
+                        ]
+                    },
+                    {
+                        "code": "DLBAIPEAI",
+                        "name": "Project: Edge AI",
+                        "assessment": "Written Assessment: Project Report",
+                        "core_topics": [
+                            "Designing and prototyping an Edge AI system"
+                        ]
+                    },
+                    {
+                        "code": "DLBROIR_E",
+                        "name": "Introduction to Robotics",
+                        "assessment": "Exam or Written Assessment: Written Assignment",
+                        "core_topics": [
+                            "Industrial Robots, Mobile Robots, Applications, Trends"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSAPM",
+                        "name": "Agile Project Management",
+                        "assessment": "Written Assessment: Project Report",
+                        "core_topics": [
+                            "Agile project management values, activities, roles, and artifacts using Scrum"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSEAD",
+                        "name": "Autonomous Driving",
+                        "assessment": "Exam / Written Assessment: Research Essay",
+                        "core_topics": [
+                            "Safety standards, Sensor fusion, Computer vision, Localization \u0026 motion, Motion planning"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSEAR",
+                        "name": "Production Engineering, Automation and Robotics",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Additive Manufacturing Processes, Cyber-Physical Production Plants, Sensors, Control Engineering"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSEDE",
+                        "name": "Data Engineer",
+                        "assessment": "Exam / Portfolio",
+                        "core_topics": [
+                            "NoSQL datastores, Architectures for data processing at scale, Containerization, Data pipelines"
+                        ]
+                    },
+                    {
+                        "code": "DLBAIEDSPST",
+                        "name": "Digital Signal Processing and Sensor Technology",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Signal sampling and quantization, Discrete Fourier Transform, z-Transform, Sensor effects"
+                        ]
+                    },
+                    {
+                        "code": "DLBAIEDD",
+                        "name": "Database Developer",
+                        "assessment": "Exam / Portfolio",
+                        "core_topics": [
+                            "Relational databases, E/R Diagrams, NoSQL, Implementation of a data mart in SQL"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSEBI",
+                        "name": "Business Intelligence",
+                        "assessment": "Exam / Written Assessment: Project Report",
+                        "core_topics": [
+                            "Data Provision, Data Warehouse, Modeling Multidimensional Data Spaces, Analysis Systems"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSEDA",
+                        "name": "Data Analyst",
+                        "assessment": "Exam / Portfolio",
+                        "core_topics": [
+                            "Business performance analytics, Text mining, Web- and social media analytics, Experimentation and testing"
+                        ]
+                    },
+                    {
+                        "code": "DLBMIAMVR_E",
+                        "name": "Augmented, Mixed and Virtual Reality",
+                        "assessment": "Exam / Written Assessment: Project Report",
+                        "core_topics": [
+                            "Human Perception, Output Devices, Interaction in VR/AR, Application Development"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSEIMB",
+                        "name": "International Marketing and Branding",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "International marketing strategy, Brand architectures, Brand communication"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSEAS",
+                        "name": "Applied Sales",
+                        "assessment": "Exam / Exam or Advanced Workbook",
+                        "core_topics": [
+                            "Distribution System, Personal Sales, Conversational Tactics, Customer Retention, Networking"
+                        ]
+                    },
+                    {
+                        "code": "DLBDSESCM",
+                        "name": "Supply Chain Management",
+                        "assessment": "Exam / Exam or Advanced Workbook",
+                        "core_topics": [
+                            "Logistical core processes, Coordination and collaboration, Strategic aspects of SCM"
+                        ]
+                    },
+                    {
+                        "code": "DLBCSEITPAM",
+                        "name": "IT project and architecture management",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "IT project management, IT application portfolio management, Frameworks using TOGAF"
+                        ]
+                    },
+                    {
+                        "code": "DLBKPSWPMCI_E",
+                        "name": "Psychology of Human Computer Interaction",
+                        "assessment": "Exam, 90 Minutes",
+                        "core_topics": [
+                            "Psychological Basics of User Experience, Emotional Impact of Design, Human Perception and Cognition"
+                        ]
+                    },
+                    {
+                        "code": "DLBKAENT_E",
+                        "name": "Career Development",
+                        "assessment": "Advanced Workbook / Concept Presentation",
+                        "core_topics": [
+                            "Career Theories and Models, Personal Branding, Global Careers, Employment Search"
+                        ]
+                    },
+                    {
+                        "code": "DLBBT",
+                        "name": "Bachelor Thesis",
+                        "assessment": "Bachelor Thesis and Colloquium",
+                        "core_topics": [
+                            "Final academic paper and oral defense"
+                        ]
+                    }
+                ]
+            }
+        ]
     }
-  ]
-}
+]
